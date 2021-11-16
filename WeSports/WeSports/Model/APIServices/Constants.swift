@@ -12,3 +12,8 @@ struct GetUrl {
         return "https://we-sports-sv.herokuapp.com\(endPoint.rawValue)"
     }
 }
+
+enum Constant {
+    static let firstLoginKey = "FIRSTLOGIN"
+    static let loggedKey = "LOGGED"
+}

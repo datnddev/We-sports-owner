@@ -16,6 +16,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.makeKeyAndVisible()
         
-        window?.rootViewController = SplashViewController()
+        if !UserDefaults.standard.bool(forKey: Constant.firstLoginKey) {
+            window?.rootViewController = RootViewController.splashRootView()
+        } else if !UserDefaults.standard.bool(forKey: Constant.loggedKey) {
+            window?.rootViewController = RootViewController.loginRootView()
+        }
     }
 }
