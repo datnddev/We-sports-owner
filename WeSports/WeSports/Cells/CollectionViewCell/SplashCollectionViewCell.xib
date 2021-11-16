@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SplashCollectionViewCell" customModule="WeSports" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="412" height="459"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="412" height="459"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ứng dụng thể thao hàng đầu Việt Nam, tìm kiếm những trận đấu" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgN-qM-vA6">
+                        <rect key="frame" x="10" y="411" width="392" height="48"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="48" id="Iyn-5h-CH3"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chào mừng bạn đến với WeSports" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7B-qn-kl2">
+                        <rect key="frame" x="10" y="333.5" width="392" height="62.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="62.5" id="oeu-j9-WIy"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="26"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcome3" translatesAutoresizingMaskIntoConstraints="NO" id="EW0-Sm-XD4">
+                        <rect key="frame" x="113" y="18.5" width="186" height="300"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="d7B-qn-kl2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="3Zs-yD-PBH"/>
+                <constraint firstAttribute="bottom" secondItem="xgN-qM-vA6" secondAttribute="bottom" id="DxP-3d-YTD"/>
+                <constraint firstItem="xgN-qM-vA6" firstAttribute="top" secondItem="d7B-qn-kl2" secondAttribute="bottom" constant="15" id="K6E-V3-KxY"/>
+                <constraint firstItem="EW0-Sm-XD4" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="ceL-v1-vy9"/>
+                <constraint firstAttribute="trailing" secondItem="xgN-qM-vA6" secondAttribute="trailing" constant="10" id="iUh-cD-K2s"/>
+                <constraint firstItem="d7B-qn-kl2" firstAttribute="top" secondItem="EW0-Sm-XD4" secondAttribute="bottom" constant="15" id="sBG-je-WfW"/>
+                <constraint firstItem="xgN-qM-vA6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="w2h-T5-kZu"/>
+                <constraint firstAttribute="trailing" secondItem="d7B-qn-kl2" secondAttribute="trailing" constant="10" id="zRL-en-rHl"/>
+                <constraint firstItem="EW0-Sm-XD4" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.653595" id="zal-Dp-rYi"/>
+            </constraints>
+            <size key="customSize" width="412" height="459"/>
+            <connections>
+                <outlet property="contentLabel" destination="xgN-qM-vA6" id="TDa-vd-jcY"/>
+                <outlet property="splashImageView" destination="EW0-Sm-XD4" id="hdN-xS-mW5"/>
+                <outlet property="titleLabel" destination="d7B-qn-kl2" id="c4j-Dx-SXD"/>
+            </connections>
+            <point key="canvasLocation" x="394.20289855072468" y="206.58482142857142"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="welcome3" width="186" height="300"/>
+    </resources>
+</document>

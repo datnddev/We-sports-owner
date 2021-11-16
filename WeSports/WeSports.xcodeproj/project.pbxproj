@@ -16,6 +16,16 @@
 		AB24E27127434965004148B2 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24E27027434965004148B2 /* APIManager.swift */; };
 		AB24E2742743499F004148B2 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24E2732743499F004148B2 /* EndPoint.swift */; };
 		AB24E27627434BEF004148B2 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24E27527434BEF004148B2 /* APIError.swift */; };
+		AB24E279274355F4004148B2 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24E277274355F4004148B2 /* SplashViewController.swift */; };
+		AB24E27A274355F4004148B2 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB24E278274355F4004148B2 /* SplashViewController.xib */; };
+		AB24E27C2743567C004148B2 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24E27B2743567C004148B2 /* UIColor+.swift */; };
+		AB24E27F27436047004148B2 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24E27E27436047004148B2 /* ReusableView.swift */; };
+		AB24E281274360A9004148B2 /* ReusableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24E280274360A9004148B2 /* ReusableView+.swift */; };
+		AB24E2852743614B004148B2 /* SplashCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24E2832743614B004148B2 /* SplashCollectionViewCell.swift */; };
+		AB24E2862743614B004148B2 /* SplashCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB24E2842743614B004148B2 /* SplashCollectionViewCell.xib */; };
+		AB24E288274363AF004148B2 /* SplashModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24E287274363AF004148B2 /* SplashModel.swift */; };
+		AB24E28A2743640A004148B2 /* SplashModel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24E2892743640A004148B2 /* SplashModel+.swift */; };
+		AB24E28C274365F2004148B2 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24E28B274365F2004148B2 /* UIView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +40,16 @@
 		AB24E27027434965004148B2 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		AB24E2732743499F004148B2 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		AB24E27527434BEF004148B2 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		AB24E277274355F4004148B2 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		AB24E278274355F4004148B2 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
+		AB24E27B2743567C004148B2 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		AB24E27E27436047004148B2 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		AB24E280274360A9004148B2 /* ReusableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReusableView+.swift"; sourceTree = "<group>"; };
+		AB24E2832743614B004148B2 /* SplashCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashCollectionViewCell.swift; sourceTree = "<group>"; };
+		AB24E2842743614B004148B2 /* SplashCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashCollectionViewCell.xib; sourceTree = "<group>"; };
+		AB24E287274363AF004148B2 /* SplashModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashModel.swift; sourceTree = "<group>"; };
+		AB24E2892743640A004148B2 /* SplashModel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SplashModel+.swift"; sourceTree = "<group>"; };
+		AB24E28B274365F2004148B2 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +88,7 @@
 				AB24E26927434767004148B2 /* View */,
 				AB24E26827434761004148B2 /* Model */,
 				AB24E26A2743476C004148B2 /* Controller */,
+				AB24E27D2743600C004148B2 /* Cells */,
 				AB24E25C27434685004148B2 /* Assets.xcassets */,
 				AB24E25E27434685004148B2 /* LaunchScreen.storyboard */,
 				AB24E26127434685004148B2 /* Info.plist */,
@@ -88,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				AB24E26D27434920004148B2 /* APIServices */,
+				AB24E287274363AF004148B2 /* SplashModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -103,6 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				AB24E25727434684004148B2 /* MainViewController.swift */,
+				AB24E277274355F4004148B2 /* SplashViewController.swift */,
+				AB24E278274355F4004148B2 /* SplashViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -110,6 +134,10 @@
 		AB24E26B27434771004148B2 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				AB24E27B2743567C004148B2 /* UIColor+.swift */,
+				AB24E280274360A9004148B2 /* ReusableView+.swift */,
+				AB24E2892743640A004148B2 /* SplashModel+.swift */,
+				AB24E28B274365F2004148B2 /* UIView+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -117,6 +145,7 @@
 		AB24E26C2743477B004148B2 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				AB24E27E27436047004148B2 /* ReusableView.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -130,6 +159,23 @@
 				AB24E27527434BEF004148B2 /* APIError.swift */,
 			);
 			path = APIServices;
+			sourceTree = "<group>";
+		};
+		AB24E27D2743600C004148B2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				AB24E2822743610A004148B2 /* CollectionViewCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		AB24E2822743610A004148B2 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				AB24E2832743614B004148B2 /* SplashCollectionViewCell.swift */,
+				AB24E2842743614B004148B2 /* SplashCollectionViewCell.xib */,
+			);
+			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,7 +236,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB24E26027434685004148B2 /* LaunchScreen.storyboard in Resources */,
+				AB24E27A274355F4004148B2 /* SplashViewController.xib in Resources */,
 				AB24E25D27434685004148B2 /* Assets.xcassets in Resources */,
+				AB24E2862743614B004148B2 /* SplashCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,12 +250,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB24E2742743499F004148B2 /* EndPoint.swift in Sources */,
+				AB24E28C274365F2004148B2 /* UIView+.swift in Sources */,
+				AB24E27F27436047004148B2 /* ReusableView.swift in Sources */,
 				AB24E25827434684004148B2 /* MainViewController.swift in Sources */,
 				AB24E25427434684004148B2 /* AppDelegate.swift in Sources */,
+				AB24E28A2743640A004148B2 /* SplashModel+.swift in Sources */,
 				AB24E27127434965004148B2 /* APIManager.swift in Sources */,
 				AB24E25627434684004148B2 /* SceneDelegate.swift in Sources */,
 				AB24E26F27434946004148B2 /* Constants.swift in Sources */,
 				AB24E27627434BEF004148B2 /* APIError.swift in Sources */,
+				AB24E281274360A9004148B2 /* ReusableView+.swift in Sources */,
+				AB24E279274355F4004148B2 /* SplashViewController.swift in Sources */,
+				AB24E288274363AF004148B2 /* SplashModel.swift in Sources */,
+				AB24E27C2743567C004148B2 /* UIColor+.swift in Sources */,
+				AB24E2852743614B004148B2 /* SplashCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
