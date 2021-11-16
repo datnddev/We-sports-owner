@@ -36,6 +36,7 @@ final class APIManager {
             guard let response = response as? HTTPURLResponse,
                   response.statusCode == 200,
                   let data = data else {
+                print(response)
                 completion(.failure(.responseError))
                 return
             }

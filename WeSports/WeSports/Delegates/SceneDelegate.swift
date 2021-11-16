@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         if !UserDefaults.standard.bool(forKey: Constant.firstLoginKey) {
             window?.rootViewController = RootViewController.splashRootView()
-        } else if !UserDefaults.standard.bool(forKey: Constant.loggedKey) {
+        } else if UserDefaults.standard.string(forKey: Constant.loggedKey) != nil {
             window?.rootViewController = RootViewController.loginRootView()
         }
     }
