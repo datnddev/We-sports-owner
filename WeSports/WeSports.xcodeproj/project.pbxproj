@@ -12,6 +12,10 @@
 		AB24E25827434684004148B2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24E25727434684004148B2 /* MainViewController.swift */; };
 		AB24E25D27434685004148B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB24E25C27434685004148B2 /* Assets.xcassets */; };
 		AB24E26027434685004148B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB24E25E27434685004148B2 /* LaunchScreen.storyboard */; };
+		AB24E26F27434946004148B2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24E26E27434946004148B2 /* Constants.swift */; };
+		AB24E27127434965004148B2 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24E27027434965004148B2 /* APIManager.swift */; };
+		AB24E2742743499F004148B2 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24E2732743499F004148B2 /* EndPoint.swift */; };
+		AB24E27627434BEF004148B2 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24E27527434BEF004148B2 /* APIError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		AB24E25C27434685004148B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB24E25F27434685004148B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB24E26127434685004148B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB24E26E27434946004148B2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AB24E27027434965004148B2 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		AB24E2732743499F004148B2 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		AB24E27527434BEF004148B2 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +87,7 @@
 		AB24E26827434761004148B2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AB24E26D27434920004148B2 /* APIServices */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -110,6 +119,17 @@
 			children = (
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		AB24E26D27434920004148B2 /* APIServices */ = {
+			isa = PBXGroup;
+			children = (
+				AB24E26E27434946004148B2 /* Constants.swift */,
+				AB24E27027434965004148B2 /* APIManager.swift */,
+				AB24E2732743499F004148B2 /* EndPoint.swift */,
+				AB24E27527434BEF004148B2 /* APIError.swift */,
+			);
+			path = APIServices;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,9 +201,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB24E2742743499F004148B2 /* EndPoint.swift in Sources */,
 				AB24E25827434684004148B2 /* MainViewController.swift in Sources */,
 				AB24E25427434684004148B2 /* AppDelegate.swift in Sources */,
+				AB24E27127434965004148B2 /* APIManager.swift in Sources */,
 				AB24E25627434684004148B2 /* SceneDelegate.swift in Sources */,
+				AB24E26F27434946004148B2 /* Constants.swift in Sources */,
+				AB24E27627434BEF004148B2 /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
