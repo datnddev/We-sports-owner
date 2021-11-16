@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="forgotPasswordLabel" destination="76W-Ly-R8o" id="v1g-Ld-1im"/>
                 <outlet property="loginButton" destination="Fe4-a2-bZb" id="uKa-dQ-DzO"/>
+                <outlet property="loginView" destination="7x5-DO-fOg" id="Urw-hP-uWv"/>
                 <outlet property="passwordCustomTextField" destination="y1d-9D-0wb" id="uZO-hE-SlM"/>
                 <outlet property="registerStackView" destination="Jgs-ym-wDG" id="Rlp-Qh-FvK"/>
                 <outlet property="userCustomTextField" destination="ITa-dK-C56" id="mgd-CW-AKa"/>
@@ -144,6 +145,9 @@
                             <state key="normal" title="Đăng nhập">
                                 <color key="titleColor" red="0.12941176469999999" green="0.1019607843" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="loginDidTapped:" destination="-1" eventType="touchUpInside" id="L6n-Gn-MQt"/>
+                            </connections>
                         </button>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Jgs-ym-wDG">
                             <rect key="frame" x="58" y="648.5" width="298" height="21.5"/>
