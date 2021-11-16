@@ -13,4 +13,9 @@ extension UIView {
         clipsToBounds = true
         layer.cornerRadius = bounds.height / 2
     }
+    
+    func makeRadius(radius: CGFloat) {
+        clipsToBounds = true
+        layer.cornerRadius = radius
+    }
 }
