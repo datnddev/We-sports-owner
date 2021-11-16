@@ -16,12 +16,37 @@ final class SplashViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UserDefaults.standard.setValue(true, forKey: Constant.firstLoginKey)
         setupView()
         setupCollectionView()
+        setupAction()
+    }
+    
+    private func setupAction() {
+        nextImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(nextDidTapped)))
+    }
+    
+    @objc
+    private func nextDidTapped() {
+        if pageControl.currentPage < splashData.count - 1{
+            pageControl.currentPage += 1
+            splashCollectionView.setContentOffset(
+                CGPoint(x: splashCollectionView.bounds.size.width * CGFloat(pageControl.currentPage), y: 0),
+                                                  animated: true)
+        } else {
+            changeRootView(vc: RootViewController.loginRootView())
+        }
+    }
+    
+    @IBAction func skipDidTapped(_ sender: Any) {
+        changeRootView(vc: RootViewController.loginRootView())
     }
     
     private func setupView() {
         pageControl.isUserInteractionEnabled = false
+        pageControl.numberOfPages = splashData.count
+        pageControl.currentPage = 0
+        pageControl.currentPageIndicatorTintColor = .systemYellow
         
         nextImageView.isUserInteractionEnabled = true
         nextImageView.makeCircle()
@@ -65,5 +90,9 @@ extension SplashViewController: UICollectionViewDataSource {
 extension SplashViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        pageControl.currentPage = Int(scrollView.contentOffset.x / UIScreen.main.bounds.width)
     }
 }
