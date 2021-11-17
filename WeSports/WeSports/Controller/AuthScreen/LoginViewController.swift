@@ -44,18 +44,45 @@ final class LoginViewController: UIViewController {
     }
     
     @IBAction func loginDidTapped(_ sender: Any) {
-        guard let username = userCustomTextField.textField.text, !username.isEmpty,
-              let password = passwordCustomTextField.textField.text, !password.isEmpty else {
+        guard let param = validator() else {
             return
         }
-        let paramDic = ["ownerUsername":username, "ownerPassword":password]
         APIManager.shared.postRequest(
             url: GetUrl.baseUrl(endPoint: .login),
-            params: paramDic) { result in
+            params: param) { result in
             switch result {
             case .success(let data):
                 do {
                     let response = try JSONDecoder().decode(LoginResponse.self, from: data)
+                    switch response.status {
+                    case LoginStatus.notVerify.rawValue:
+                        DispatchQueue.main.async { [weak self] in
+                            guard let self = self else { return }
+                            self.showAlertAuth(
+                                title: "Tài khoản chưa được xác minh",
+                                message: "Gửi lại mã xác nhận",
+                                status: .notVerify){ alert in
+                                alert.addTextField { textfield in
+                                    textfield.placeholder = "Nhập email"
+                                }
+                                alert.addAction(UIAlertAction(title: "Gửi lại mã xác nhận",
+                                                              style: .default, handler: nil))
+                                let cancelAlert = UIAlertAction(title: "Kiểm tra lại email",
+                                                                style: .destructive, handler: nil)
+                                alert.addAction(cancelAlert)
+                            }
+                        }
+//                    case LoginStatus.fail.rawValue:
+//                        DispatchQueue.main.async { [weak self] in
+//                            guard let self = self else { return }
+//                            self.showAlertAuth(
+//                                title: "Tài khoản chưa được xác minh",
+//                                message: "Gửi lại mã xác nhận",
+//                                status: .notVerify)
+//                        }
+                    default:
+                        break
+                    }
                     guard let owner = response.owner else { return }
                     UserDefaults.standard.setValue(owner.id, forKey: Constant.loggedKey)
                 } catch {
@@ -64,6 +91,19 @@ final class LoginViewController: UIViewController {
             case .failure(let error):
                 print(error)
             }
+        }
+    }
+    
+    private func validator() -> Dictionary<String, String>?{
+        do {
+            let username = try userCustomTextField.textField.validateText(
+                type: .username, for: nil)
+            let password = try passwordCustomTextField.textField.validateText(
+                type: .password, for: nil)
+            return ["ownerUsername":username, "ownerPassword":password]
+        } catch {
+            print((error as! ValidatorError).message)
+            return nil
         }
     }
     

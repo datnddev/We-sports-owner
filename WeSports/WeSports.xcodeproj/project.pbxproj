@@ -37,6 +37,10 @@
 		AB24E2A82743EC7F004148B2 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24E2A72743EC7F004148B2 /* LoginResponse.swift */; };
 		AB24E2AF2743F1A3004148B2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24E2AD2743F1A3004148B2 /* SignUpViewController.swift */; };
 		AB24E2B02743F1A3004148B2 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB24E2AE2743F1A3004148B2 /* SignUpViewController.xib */; };
+		AB24E2B22744000D004148B2 /* ValidatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24E2B12744000D004148B2 /* ValidatorType.swift */; };
+		AB24E2B42744128B004148B2 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24E2B32744128B004148B2 /* Validator.swift */; };
+		AB24E2B6274412A9004148B2 /* ValidatorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24E2B5274412A9004148B2 /* ValidatorConvertible.swift */; };
+		AB24E2B827442DE3004148B2 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24E2B727442DE3004148B2 /* UITextField+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +76,10 @@
 		AB24E2A72743EC7F004148B2 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		AB24E2AD2743F1A3004148B2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		AB24E2AE2743F1A3004148B2 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		AB24E2B12744000D004148B2 /* ValidatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorType.swift; sourceTree = "<group>"; };
+		AB24E2B32744128B004148B2 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		AB24E2B5274412A9004148B2 /* ValidatorConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorConvertible.swift; sourceTree = "<group>"; };
+		AB24E2B727442DE3004148B2 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +143,7 @@
 				AB24E287274363AF004148B2 /* SplashModel.swift */,
 				AB24E2A52743E6BC004148B2 /* Owner.swift */,
 				AB24E2A72743EC7F004148B2 /* LoginResponse.swift */,
+				AB24E2B32744128B004148B2 /* Validator.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -166,6 +175,7 @@
 				AB24E2892743640A004148B2 /* SplashModel+.swift */,
 				AB24E28B274365F2004148B2 /* UIView+.swift */,
 				AB24E293274393B9004148B2 /* UIViewController+.swift */,
+				AB24E2B727442DE3004148B2 /* UITextField+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -175,6 +185,7 @@
 			children = (
 				AB24E27E27436047004148B2 /* ReusableView.swift */,
 				AB24E295274398A5004148B2 /* ChangeRootViewProtocol.swift */,
+				AB24E2B5274412A9004148B2 /* ValidatorConvertible.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -231,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				AB24E29727439956004148B2 /* RootViewController.swift */,
+				AB24E2B12744000D004148B2 /* ValidatorType.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -315,9 +327,11 @@
 				AB24E296274398A5004148B2 /* ChangeRootViewProtocol.swift in Sources */,
 				AB24E2A22743AA97004148B2 /* CustomTextField.swift in Sources */,
 				AB24E29D27439A72004148B2 /* LoginViewController.swift in Sources */,
+				AB24E2B22744000D004148B2 /* ValidatorType.swift in Sources */,
 				AB24E2AF2743F1A3004148B2 /* SignUpViewController.swift in Sources */,
 				AB24E27F27436047004148B2 /* ReusableView.swift in Sources */,
 				AB24E25827434684004148B2 /* MainViewController.swift in Sources */,
+				AB24E2B6274412A9004148B2 /* ValidatorConvertible.swift in Sources */,
 				AB24E25427434684004148B2 /* AppDelegate.swift in Sources */,
 				AB24E28A2743640A004148B2 /* SplashModel+.swift in Sources */,
 				AB24E27127434965004148B2 /* APIManager.swift in Sources */,
@@ -330,6 +344,8 @@
 				AB24E279274355F4004148B2 /* SplashViewController.swift in Sources */,
 				AB24E288274363AF004148B2 /* SplashModel.swift in Sources */,
 				AB24E27C2743567C004148B2 /* UIColor+.swift in Sources */,
+				AB24E2B42744128B004148B2 /* Validator.swift in Sources */,
+				AB24E2B827442DE3004148B2 /* UITextField+.swift in Sources */,
 				AB24E2A82743EC7F004148B2 /* LoginResponse.swift in Sources */,
 				AB24E2852743614B004148B2 /* SplashCollectionViewCell.swift in Sources */,
 			);
