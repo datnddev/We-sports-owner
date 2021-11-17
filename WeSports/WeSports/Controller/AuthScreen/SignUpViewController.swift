@@ -27,12 +27,40 @@ final class SignUpViewController: UIViewController {
         scrollView.setContentOffset(CGPoint(x: 0, y: 180), animated: false)
         
         registerButton.makeRadius(radius: 10)
-        scrollView.makeRadius(radius: 25, mask: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
+        scrollView.makeRadius(radius: 25,
+                              mask: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
+        
+        textFieldsContainer.nameCustomTextField.textField.tag = 1
+        textFieldsContainer.usernameCustomTextField.textField.tag = 2
+        textFieldsContainer.phoneCustomTextField.textField.tag = 3
     }
     
     private func setupAction() {
         registerContainer.addGestureRecognizer(UITapGestureRecognizer(
                                                 target: self, action: #selector(turnOffKeyBoard)))
+        textFieldsContainer.nameCustomTextField.textField.addTarget(
+            self,
+            action: #selector(scrollToPosition(sender:)), for: .editingDidBegin)
+        textFieldsContainer.usernameCustomTextField.textField.addTarget(
+            self,
+            action: #selector(scrollToPosition(sender:)), for: .editingDidBegin)
+        textFieldsContainer.phoneCustomTextField.textField.addTarget(
+            self,
+            action: #selector(scrollToPosition(sender:)), for: .editingDidBegin)
+    }
+    
+    @objc
+    func scrollToPosition(sender: UITextField) {
+        switch sender.tag {
+        case 1:
+            scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+        case 2:
+            scrollView.setContentOffset(CGPoint(x: 0, y: 130), animated: true)
+        case 3:
+            scrollView.setContentOffset(CGPoint(x: 0, y: 230), animated: true)
+        default:
+            break
+        }
     }
     
     @IBAction func registerDidTapped(_ sender: Any) {
