@@ -12,6 +12,12 @@ class CustomTextField: UIView {
     @IBOutlet weak var leadingImageView: UIImageView!
     @IBOutlet weak var textField: UITextField!
     
+    @IBInspectable var placeholder: String? = "Nhập nội dung" {
+        didSet {
+            textField.placeholder = placeholder
+        }
+    }
+    
     @IBInspectable var leadingIcon: UIImage? {
         didSet {
             guard let leadingIcon = leadingIcon else { return }
@@ -57,6 +63,7 @@ class CustomTextField: UIView {
         let containerView = loadNib()
         containerView.frame = bounds
         addSubview(containerView)
+        textField.placeholder = placeholder
     }
     
     private func loadNib() -> UIView {

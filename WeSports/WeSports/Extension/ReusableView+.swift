@@ -16,4 +16,8 @@ extension ReusableView {
     static var nib: UINib {
         return UINib(nibName: identifier, bundle: nil)
     }
+    
+    func loadViewFromNib() -> UIView {
+        return Self.nib.instantiate(withOwner: self, options: nil).first as! UIView
+    }
 }

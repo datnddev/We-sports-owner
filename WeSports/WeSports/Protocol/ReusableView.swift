@@ -11,4 +11,5 @@ import UIKit
 protocol ReusableView {
     static var identifier: String { get }
     static var nib: UINib { get }
+    func loadViewFromNib() -> UIView
 }
