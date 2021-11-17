@@ -18,7 +18,14 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="62"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="nhap noi dung" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QdO-06-XKE">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8s7-ef-EdF">
+                    <rect key="frame" x="5" y="16" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="ZqL-5v-xDQ"/>
+                        <constraint firstAttribute="height" constant="30" id="w8y-im-v1V"/>
+                    </constraints>
+                </imageView>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QdO-06-XKE" userLabel="textField">
                     <rect key="frame" x="40" y="11" width="369" height="40"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -27,20 +34,13 @@
                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8s7-ef-EdF">
-                    <rect key="frame" x="5" y="16" width="30" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="30" id="ZqL-5v-xDQ"/>
-                        <constraint firstAttribute="height" constant="30" id="w8y-im-v1V"/>
-                    </constraints>
-                </imageView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="8s7-ef-EdF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="9fZ-aF-BTF"/>
                 <constraint firstItem="8s7-ef-EdF" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="EJr-wv-yAH"/>
-                <constraint firstItem="QdO-06-XKE" firstAttribute="leading" secondItem="8s7-ef-EdF" secondAttribute="trailing" constant="5" id="EgF-9F-WJa"/>
                 <constraint firstItem="QdO-06-XKE" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="dJH-TK-K2h"/>
+                <constraint firstItem="QdO-06-XKE" firstAttribute="leading" secondItem="8s7-ef-EdF" secondAttribute="trailing" constant="5" id="dc6-ca-fpQ"/>
                 <constraint firstAttribute="trailing" secondItem="QdO-06-XKE" secondAttribute="trailing" constant="5" id="sLj-az-TdD"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
