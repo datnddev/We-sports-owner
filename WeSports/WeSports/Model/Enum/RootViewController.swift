@@ -19,5 +19,7 @@ enum RootViewController {
         return nav
     }
     
-    static func mainRootView() {}
+    static func mainRootView() -> UIViewController {
+        return MainViewController()
+    }
 }
