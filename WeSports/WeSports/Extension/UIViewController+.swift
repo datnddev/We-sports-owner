@@ -25,3 +25,18 @@ extension UIViewController {
         view.endEditing(true)
     }
 }
+
+extension UIViewController {
+    func showAlertAuth(title: String,
+                   message: String,
+                   style: UIAlertController.Style = .alert,
+                   status: LoginStatus,
+                   completion: @escaping (UIAlertController)->Void) {
+        let alert = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: style)
+        completion(alert)  
+        present(alert, animated: true, completion: nil)
+    }
+}
