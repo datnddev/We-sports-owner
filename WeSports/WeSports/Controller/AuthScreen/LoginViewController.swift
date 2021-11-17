@@ -44,9 +44,7 @@ final class LoginViewController: UIViewController {
     }
     
     @IBAction func loginDidTapped(_ sender: Any) {
-        guard let param = validator() else {
-            return
-        }
+        guard let param = validator() else { return }
         APIManager.shared.postRequest(
             url: GetUrl.baseUrl(endPoint: .login),
             params: param) { result in
@@ -72,19 +70,24 @@ final class LoginViewController: UIViewController {
                                 alert.addAction(cancelAlert)
                             }
                         }
-//                    case LoginStatus.fail.rawValue:
-//                        DispatchQueue.main.async { [weak self] in
-//                            guard let self = self else { return }
-//                            self.showAlertAuth(
-//                                title: "Tài khoản chưa được xác minh",
-//                                message: "Gửi lại mã xác nhận",
-//                                status: .notVerify)
-//                        }
+                    case LoginStatus.fail.rawValue:
+                        DispatchQueue.main.async { [weak self] in
+                            guard let self = self else { return }
+                            self.showAlertAuth(
+                                title: "Đăng nhập thất bại",
+                                message: "Kiểm tra lại tên đăng nhập và mật khẩu",
+                                status: .fail){ alert in
+                                alert.addAction(UIAlertAction(title: "OK",
+                                                              style: .default, handler: nil))
+                            }
+                        }
+                    case LoginStatus.succes.rawValue:
+                        guard let owner = response.owner else { return }
+                        print(owner.id)
+                        UserDefaults.standard.setValue(owner.id, forKey: Constant.loggedKey)
                     default:
                         break
                     }
-                    guard let owner = response.owner else { return }
-                    UserDefaults.standard.setValue(owner.id, forKey: Constant.loggedKey)
                 } catch {
                     print(String(describing: error))
                 }
