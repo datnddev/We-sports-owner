@@ -27,14 +27,14 @@
                     <rect key="frame" x="0.0" y="192" width="414" height="704"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hj9-ZY-rPW" userLabel="contentView">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="800"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="900"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="StI-SS-qQl" customClass="InforTextFields" customModule="WeSports" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="63.5" width="414" height="736.5"/>
+                                    <rect key="frame" x="0.0" y="253.5" width="414" height="646.5"/>
                                     <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đăng ký" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l2R-y5-PIS">
-                                    <rect key="frame" x="153.5" y="10" width="107" height="33.5"/>
+                                    <rect key="frame" x="153.5" y="200" width="107" height="33.5"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -45,8 +45,8 @@
                                 <constraint firstAttribute="trailing" secondItem="StI-SS-qQl" secondAttribute="trailing" id="LUT-cA-5az"/>
                                 <constraint firstAttribute="bottom" secondItem="StI-SS-qQl" secondAttribute="bottom" id="Ofl-Xg-h8j"/>
                                 <constraint firstItem="StI-SS-qQl" firstAttribute="leading" secondItem="hj9-ZY-rPW" secondAttribute="leading" id="bCo-yT-vzq"/>
-                                <constraint firstAttribute="height" constant="800" id="bai-96-JZO"/>
-                                <constraint firstItem="l2R-y5-PIS" firstAttribute="top" secondItem="hj9-ZY-rPW" secondAttribute="top" constant="10" id="fWo-Ko-fBT"/>
+                                <constraint firstAttribute="height" constant="900" id="bai-96-JZO"/>
+                                <constraint firstItem="l2R-y5-PIS" firstAttribute="top" secondItem="hj9-ZY-rPW" secondAttribute="top" constant="200" id="fWo-Ko-fBT"/>
                                 <constraint firstItem="StI-SS-qQl" firstAttribute="top" secondItem="l2R-y5-PIS" secondAttribute="bottom" constant="20" id="n2d-WK-DqO"/>
                                 <constraint firstItem="l2R-y5-PIS" firstAttribute="centerX" secondItem="hj9-ZY-rPW" secondAttribute="centerX" id="uuf-LC-sDg"/>
                             </constraints>

@@ -22,6 +22,11 @@ extension UIViewController: ChangeRootViewProtocol {
 
 extension UIViewController {
     open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        turnOffKeyBoard()
+    }
+    
+    @objc
+    func turnOffKeyBoard() {
         view.endEditing(true)
     }
 }
