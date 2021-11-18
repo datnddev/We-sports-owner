@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		AB075F082744FBFA0063440F /* InforTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB075F072744FBFA0063440F /* InforTextFields.swift */; };
 		AB075F0A2744FC060063440F /* InforTextFields.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB075F092744FC060063440F /* InforTextFields.xib */; };
-		AB075F0C2744FD910063440F /* CustomViewXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB075F0B2744FD910063440F /* CustomViewXib.swift */; };
-		AB075F0E2744FDD40063440F /* CustomViewXib+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB075F0D2744FDD40063440F /* CustomViewXib+.swift */; };
 		AB24E25427434684004148B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24E25327434684004148B2 /* AppDelegate.swift */; };
 		AB24E25627434684004148B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24E25527434684004148B2 /* SceneDelegate.swift */; };
 		AB24E25827434684004148B2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24E25727434684004148B2 /* MainViewController.swift */; };
@@ -48,13 +46,16 @@
 		AB8A21402745EFA700AD1F22 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8A213E2745EFA700AD1F22 /* HomeViewController.swift */; };
 		AB8A21412745EFA700AD1F22 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB8A213F2745EFA700AD1F22 /* HomeViewController.xib */; };
 		ABE1333A2745780B00EC9377 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE133392745780B00EC9377 /* Date+.swift */; };
+		AB8A21452746384E00AD1F22 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8A21442746384E00AD1F22 /* Cache.swift */; };
+		AB8A21472746390200AD1F22 /* Cache+WrappedKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8A21462746390200AD1F22 /* Cache+WrappedKey.swift */; };
+		AB8A21492746395C00AD1F22 /* Cache+Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8A21482746395C00AD1F22 /* Cache+Entry.swift */; };
+		AB8A214B27463B1500AD1F22 /* Cache+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8A214A27463B1500AD1F22 /* Cache+.swift */; };
+		AB8A214D27463C1900AD1F22 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8A214C27463C1900AD1F22 /* ImageCacheManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AB075F072744FBFA0063440F /* InforTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InforTextFields.swift; sourceTree = "<group>"; };
 		AB075F092744FC060063440F /* InforTextFields.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InforTextFields.xib; sourceTree = "<group>"; };
-		AB075F0B2744FD910063440F /* CustomViewXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewXib.swift; sourceTree = "<group>"; };
-		AB075F0D2744FDD40063440F /* CustomViewXib+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomViewXib+.swift"; sourceTree = "<group>"; };
 		AB24E25027434684004148B2 /* WeSports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeSports.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB24E25327434684004148B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB24E25527434684004148B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +95,11 @@
 		AB8A213E2745EFA700AD1F22 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AB8A213F2745EFA700AD1F22 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		ABE133392745780B00EC9377 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
+		AB8A21442746384E00AD1F22 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		AB8A21462746390200AD1F22 /* Cache+WrappedKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cache+WrappedKey.swift"; sourceTree = "<group>"; };
+		AB8A21482746395C00AD1F22 /* Cache+Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cache+Entry.swift"; sourceTree = "<group>"; };
+		AB8A214A27463B1500AD1F22 /* Cache+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cache+.swift"; sourceTree = "<group>"; };
+		AB8A214C27463C1900AD1F22 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,12 +158,14 @@
 		AB24E26827434761004148B2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AB24E29F27439E94004148B2 /* Enum */,
+				AB8A21432746384400AD1F22 /* Cache */,
+				AB8A21422746381900AD1F22 /* Validator */,
+				AB24E29F27439E94004148B2 /* Others */,
 				AB24E26D27434920004148B2 /* APIServices */,
+				AB24E26E27434946004148B2 /* Constants.swift */,
 				AB24E287274363AF004148B2 /* SplashModel.swift */,
 				AB24E2A52743E6BC004148B2 /* Owner.swift */,
 				AB24E2A72743EC7F004148B2 /* LoginResponse.swift */,
-				AB24E2B32744128B004148B2 /* Validator.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -195,6 +203,9 @@
 				AB24E2B727442DE3004148B2 /* UITextField+.swift */,
 				AB075F0D2744FDD40063440F /* CustomViewXib+.swift */,
 				ABE133392745780B00EC9377 /* Date+.swift */,
+				AB8A21462746390200AD1F22 /* Cache+WrappedKey.swift */,
+				AB8A21482746395C00AD1F22 /* Cache+Entry.swift */,
+				AB8A214A27463B1500AD1F22 /* Cache+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -205,7 +216,6 @@
 				AB24E27E27436047004148B2 /* ReusableView.swift */,
 				AB24E295274398A5004148B2 /* ChangeRootViewProtocol.swift */,
 				AB24E2B5274412A9004148B2 /* ValidatorConvertible.swift */,
-				AB075F0B2744FD910063440F /* CustomViewXib.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -213,7 +223,6 @@
 		AB24E26D27434920004148B2 /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
-				AB24E26E27434946004148B2 /* Constants.swift */,
 				AB24E27027434965004148B2 /* APIManager.swift */,
 				AB24E2732743499F004148B2 /* EndPoint.swift */,
 				AB24E27527434BEF004148B2 /* APIError.swift */,
@@ -258,13 +267,30 @@
 			path = AuthScreen;
 			sourceTree = "<group>";
 		};
-		AB24E29F27439E94004148B2 /* Enum */ = {
+		AB24E29F27439E94004148B2 /* Others */ = {
 			isa = PBXGroup;
 			children = (
 				AB24E29727439956004148B2 /* RootViewController.swift */,
-				AB24E2B12744000D004148B2 /* ValidatorType.swift */,
 			);
-			path = Enum;
+			path = Others;
+			sourceTree = "<group>";
+		};
+		AB8A21422746381900AD1F22 /* Validator */ = {
+			isa = PBXGroup;
+			children = (
+				AB24E2B12744000D004148B2 /* ValidatorType.swift */,
+				AB24E2B32744128B004148B2 /* Validator.swift */,
+			);
+			path = Validator;
+			sourceTree = "<group>";
+		};
+		AB8A21432746384400AD1F22 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				AB8A21442746384E00AD1F22 /* Cache.swift */,
+				AB8A214C27463C1900AD1F22 /* ImageCacheManager.swift */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 		AB8A213D2745EDCF00AD1F22 /* OwnerScreen */ = {
@@ -355,23 +381,25 @@
 				AB24E2742743499F004148B2 /* EndPoint.swift in Sources */,
 				AB24E28C274365F2004148B2 /* UIView+.swift in Sources */,
 				AB24E29827439956004148B2 /* RootViewController.swift in Sources */,
-				AB075F0E2744FDD40063440F /* CustomViewXib+.swift in Sources */,
 				AB24E296274398A5004148B2 /* ChangeRootViewProtocol.swift in Sources */,
 				ABE1333A2745780B00EC9377 /* Date+.swift in Sources */,
 				AB24E2A22743AA97004148B2 /* CustomTextField.swift in Sources */,
 				AB24E29D27439A72004148B2 /* LoginViewController.swift in Sources */,
+				AB8A214B27463B1500AD1F22 /* Cache+.swift in Sources */,
 				AB24E2B22744000D004148B2 /* ValidatorType.swift in Sources */,
 				AB24E2AF2743F1A3004148B2 /* SignUpViewController.swift in Sources */,
 				AB24E27F27436047004148B2 /* ReusableView.swift in Sources */,
 				AB24E25827434684004148B2 /* MainViewController.swift in Sources */,
+				AB8A21472746390200AD1F22 /* Cache+WrappedKey.swift in Sources */,
 				AB075F082744FBFA0063440F /* InforTextFields.swift in Sources */,
 				AB24E2B6274412A9004148B2 /* ValidatorConvertible.swift in Sources */,
 				AB24E25427434684004148B2 /* AppDelegate.swift in Sources */,
 				AB24E28A2743640A004148B2 /* SplashModel+.swift in Sources */,
-				AB075F0C2744FD910063440F /* CustomViewXib.swift in Sources */,
+				AB8A21452746384E00AD1F22 /* Cache.swift in Sources */,
 				AB24E27127434965004148B2 /* APIManager.swift in Sources */,
 				AB24E25627434684004148B2 /* SceneDelegate.swift in Sources */,
 				AB24E26F27434946004148B2 /* Constants.swift in Sources */,
+				AB8A214D27463C1900AD1F22 /* ImageCacheManager.swift in Sources */,
 				AB24E27627434BEF004148B2 /* APIError.swift in Sources */,
 				AB24E294274393B9004148B2 /* UIViewController+.swift in Sources */,
 				AB24E281274360A9004148B2 /* ReusableView+.swift in Sources */,
@@ -381,6 +409,7 @@
 				AB24E27C2743567C004148B2 /* UIColor+.swift in Sources */,
 				AB8A21402745EFA700AD1F22 /* HomeViewController.swift in Sources */,
 				AB24E2B42744128B004148B2 /* Validator.swift in Sources */,
+				AB8A21492746395C00AD1F22 /* Cache+Entry.swift in Sources */,
 				AB24E2B827442DE3004148B2 /* UITextField+.swift in Sources */,
 				AB24E2A82743EC7F004148B2 /* LoginResponse.swift in Sources */,
 				AB24E2852743614B004148B2 /* SplashCollectionViewCell.swift in Sources */,
