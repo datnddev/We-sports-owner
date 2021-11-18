@@ -32,10 +32,8 @@ final class APIManager {
         }
         
         //send request
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let response = response as? HTTPURLResponse,
-                  response.statusCode == 200,
-                  let data = data else {
+        URLSession.shared.dataTask(with: request) { data, response, _ in
+            guard let data = data else {
                 print(response)
                 completion(.failure(.responseError))
                 return

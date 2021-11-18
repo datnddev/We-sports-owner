@@ -33,6 +33,7 @@ final class SignUpViewController: UIViewController {
         textFieldsContainer.nameCustomTextField.textField.tag = 1
         textFieldsContainer.usernameCustomTextField.textField.tag = 2
         textFieldsContainer.phoneCustomTextField.textField.tag = 3
+        backImageView.isUserInteractionEnabled = true
     }
     
     private func setupAction() {
@@ -47,6 +48,9 @@ final class SignUpViewController: UIViewController {
         textFieldsContainer.phoneCustomTextField.textField.addTarget(
             self,
             action: #selector(scrollToPosition(sender:)), for: .editingDidBegin)
+        backImageView.addGestureRecognizer(UITapGestureRecognizer(
+                                            target: self,
+                                            action: #selector(backDidTapped)))
     }
     
     @objc
@@ -64,7 +68,61 @@ final class SignUpViewController: UIViewController {
     }
     
     @IBAction func registerDidTapped(_ sender: Any) {
-        
+        view.endEditing(true)
+        guard let owner = validator() else { return }
+        APIManager.shared.postRequest(url: GetUrl.baseUrl(endPoint: .register),
+                                      params: owner) { result in
+            switch result {
+            case .success(let dataResponnse):
+                let response = try? JSONDecoder().decode(LoginResponse.self, from: dataResponnse)
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
+                    self.showAlertAuth(title: "Đăng ký thành công",
+                                       message: "Kiểm tra email để xác nhận tài khoản") { alert in
+                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                            self.backDidTapped()
+                        }))
+                    }
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    @objc
+    private func backDidTapped() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    private func validator() -> Owner?{
+        do {
+            let name = try textFieldsContainer.nameCustomTextField
+                .textField.validateText(type: .name, for: nil)
+            let username = try textFieldsContainer.usernameCustomTextField
+                .textField.validateText(type: .username, for: nil)
+            let phone = try textFieldsContainer.phoneCustomTextField
+                .textField.validateText(type: .phone, for: nil)
+            let mail = try textFieldsContainer.mailCustomTextField
+                .textField.validateText(type: .mail, for: nil)
+            let password = try textFieldsContainer.passwordTextField
+                .textField.validateText(type: .password, for: nil)
+            let rePassword = try textFieldsContainer.rePassCustomTextField
+                .textField.validateText(type: .repassword, for: password)
+            let dateRegister = Date().formatDate(format: "dd/MM/yyyy")
+            let owner = Owner(id: nil, username: username,
+                              name: name, password: rePassword,
+                              phone: phone, mail: mail,
+                              accountStatus: 1, dateRegister: dateRegister)
+            return owner
+        } catch {
+            let errorMessage = (error as! ValidatorError).message
+            print(errorMessage)
+            showAlertAuth(title: "Hãy kiểm tra lại", message: errorMessage) { alert in
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            }
+            return nil
+        }
     }
 }
 

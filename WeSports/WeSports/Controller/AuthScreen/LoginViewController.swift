@@ -58,8 +58,7 @@ final class LoginViewController: UIViewController {
                             guard let self = self else { return }
                             self.showAlertAuth(
                                 title: "Tài khoản chưa được xác minh",
-                                message: "Gửi lại mã xác nhận",
-                                status: .notVerify){ alert in
+                                message: "Gửi lại mã xác nhận"){ alert in
                                 alert.addTextField { textfield in
                                     textfield.placeholder = "Nhập email"
                                 }
@@ -75,8 +74,7 @@ final class LoginViewController: UIViewController {
                             guard let self = self else { return }
                             self.showAlertAuth(
                                 title: "Đăng nhập thất bại",
-                                message: "Kiểm tra lại tên đăng nhập và mật khẩu",
-                                status: .fail){ alert in
+                                message: "Kiểm tra lại tên đăng nhập và mật khẩu"){ alert in
                                 alert.addAction(UIAlertAction(title: "OK",
                                                               style: .default, handler: nil))
                             }
@@ -108,7 +106,10 @@ final class LoginViewController: UIViewController {
                 type: .password, for: nil)
             return ["ownerUsername":username, "ownerPassword":password]
         } catch {
-            print((error as! ValidatorError).message)
+            showAlertAuth(title: "Hãy kiểm tra lại",
+                          message: (error as! ValidatorError).message) { alert in
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            }
             return nil
         }
     }

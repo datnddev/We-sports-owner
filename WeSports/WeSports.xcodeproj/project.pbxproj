@@ -45,6 +45,9 @@
 		AB24E2B42744128B004148B2 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24E2B32744128B004148B2 /* Validator.swift */; };
 		AB24E2B6274412A9004148B2 /* ValidatorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24E2B5274412A9004148B2 /* ValidatorConvertible.swift */; };
 		AB24E2B827442DE3004148B2 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24E2B727442DE3004148B2 /* UITextField+.swift */; };
+		AB8A21402745EFA700AD1F22 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8A213E2745EFA700AD1F22 /* HomeViewController.swift */; };
+		AB8A21412745EFA700AD1F22 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB8A213F2745EFA700AD1F22 /* HomeViewController.xib */; };
+		ABE1333A2745780B00EC9377 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE133392745780B00EC9377 /* Date+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +91,9 @@
 		AB24E2B32744128B004148B2 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		AB24E2B5274412A9004148B2 /* ValidatorConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorConvertible.swift; sourceTree = "<group>"; };
 		AB24E2B727442DE3004148B2 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
+		AB8A213E2745EFA700AD1F22 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		AB8A213F2745EFA700AD1F22 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		ABE133392745780B00EC9377 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +176,7 @@
 		AB24E26A2743476C004148B2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				AB8A213D2745EDCF00AD1F22 /* OwnerScreen */,
 				AB24E29A27439A55004148B2 /* AuthScreen */,
 				AB24E29927439A49004148B2 /* SplashScreen */,
 				AB24E25727434684004148B2 /* MainViewController.swift */,
@@ -187,6 +194,7 @@
 				AB24E293274393B9004148B2 /* UIViewController+.swift */,
 				AB24E2B727442DE3004148B2 /* UITextField+.swift */,
 				AB075F0D2744FDD40063440F /* CustomViewXib+.swift */,
+				ABE133392745780B00EC9377 /* Date+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -259,6 +267,15 @@
 			path = Enum;
 			sourceTree = "<group>";
 		};
+		AB8A213D2745EDCF00AD1F22 /* OwnerScreen */ = {
+			isa = PBXGroup;
+			children = (
+				AB8A213E2745EFA700AD1F22 /* HomeViewController.swift */,
+				AB8A213F2745EFA700AD1F22 /* HomeViewController.xib */,
+			);
+			path = OwnerScreen;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -324,6 +341,7 @@
 				AB24E25D27434685004148B2 /* Assets.xcassets in Resources */,
 				AB075F0A2744FC060063440F /* InforTextFields.xib in Resources */,
 				AB24E2862743614B004148B2 /* SplashCollectionViewCell.xib in Resources */,
+				AB8A21412745EFA700AD1F22 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +357,7 @@
 				AB24E29827439956004148B2 /* RootViewController.swift in Sources */,
 				AB075F0E2744FDD40063440F /* CustomViewXib+.swift in Sources */,
 				AB24E296274398A5004148B2 /* ChangeRootViewProtocol.swift in Sources */,
+				ABE1333A2745780B00EC9377 /* Date+.swift in Sources */,
 				AB24E2A22743AA97004148B2 /* CustomTextField.swift in Sources */,
 				AB24E29D27439A72004148B2 /* LoginViewController.swift in Sources */,
 				AB24E2B22744000D004148B2 /* ValidatorType.swift in Sources */,
@@ -360,6 +379,7 @@
 				AB24E279274355F4004148B2 /* SplashViewController.swift in Sources */,
 				AB24E288274363AF004148B2 /* SplashModel.swift in Sources */,
 				AB24E27C2743567C004148B2 /* UIColor+.swift in Sources */,
+				AB8A21402745EFA700AD1F22 /* HomeViewController.swift in Sources */,
 				AB24E2B42744128B004148B2 /* Validator.swift in Sources */,
 				AB24E2B827442DE3004148B2 /* UITextField+.swift in Sources */,
 				AB24E2A82743EC7F004148B2 /* LoginResponse.swift in Sources */,

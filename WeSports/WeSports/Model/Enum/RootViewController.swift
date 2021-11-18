@@ -20,6 +20,14 @@ enum RootViewController {
     }
     
     static func mainRootView() -> UIViewController {
-        return MainViewController()
+        let homeVC = HomeViewController()
+        homeVC.tabBarItem = UITabBarItem(
+            title: "Home", image: UIImage(systemName: "house.fill"), selectedImage: nil)
+        let homeNav = UINavigationController(rootViewController: homeVC)
+        
+        let tabBarVc = UITabBarController()
+        UITabBar.appearance().tintColor = .hex_211A2C
+        tabBarVc.viewControllers = [homeNav]
+        return tabBarVc
     }
 }

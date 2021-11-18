@@ -8,7 +8,7 @@
 import Foundation
 
 struct Owner {
-    var id: String
+    var id: String?
     var username: String
     var name: String
     var password: String
