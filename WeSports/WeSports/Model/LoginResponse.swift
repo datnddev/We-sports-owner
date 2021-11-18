@@ -10,7 +10,7 @@ import Foundation
 struct LoginResponse {
     var id: String?
     var message: String
-    var status: Int
+    var status: Int?
     var owner: Owner?
 }
 
@@ -26,6 +26,5 @@ extension LoginResponse: Codable {
 enum LoginStatus: Int {
     case succes = 0
     case fail = 1
-    case notVerify = 2
-    
+    case notVerify = 2    
 }

@@ -35,7 +35,6 @@ extension UIViewController {
     func showAlertAuth(title: String,
                    message: String,
                    style: UIAlertController.Style = .alert,
-                   status: LoginStatus,
                    completion: ((UIAlertController)->Void)?) {
         let alert = UIAlertController(
             title: title,
