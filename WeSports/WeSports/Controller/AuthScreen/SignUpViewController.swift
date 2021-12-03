@@ -69,20 +69,57 @@ final class SignUpViewController: UIViewController {
     
     @IBAction func registerDidTapped(_ sender: Any) {
         view.endEditing(true)
-        guard let owner = validator() else { return }
+        guard let renter = validator() else { return }
+        addLoadingScreen()
         APIManager.shared.postRequest(url: GetUrl.baseUrl(endPoint: .register),
-                                      params: owner) { result in
-            switch result {
-            case .success(let dataResponnse):
-                let response = try? JSONDecoder().decode(LoginResponse.self, from: dataResponnse)
+                                      params: renter) { result in
+            defer {
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
-                    self.showAlertAuth(title: "Đăng ký thành công",
-                                       message: "Kiểm tra email để xác nhận tài khoản") { alert in
-                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-                            self.backDidTapped()
-                        }))
+                    self.removeLoadingScreen()
+                }
+            }
+            switch result {
+            case .success(let dataResponnse):
+                let response = try? JSONDecoder().decode(AuthResponse.self, from: dataResponnse)
+                guard let response = response else { return }
+                switch response.status {
+                case 0:
+                        guard let renter = response.renter,
+                              let id = renter.id else { return }
+                        let param = ["_id":id, "to":"nongtrainuoikhikute@gmail.com"]
+                        APIManager.shared.postRequest(url: GetUrl.baseUrl(endPoint: .sendMail),
+                                                      params: param) { result in
+                            switch result {
+                            case .success(_):
+                                DispatchQueue.main.async { [weak self] in
+                                    guard let self = self else { return }
+                                    self.showAlertAuth(title: "Đăng ký thành công",
+                                                       message: "Kiểm tra email để xác nhận tài khoản") { alert in
+                                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                                            self.backDidTapped()
+                                        }))
+                                    }
+                                }
+                                
+                            case .failure(let error):
+                                print("send mail error \(error)")
+                            }
+                        }
+                case 1:
+                    print(1)
+                case 2:
+                    DispatchQueue.main.async { [weak self] in
+                        guard let self = self else { return }
+                        self.showAlertAuth(title: "Xác minh thất bại",
+                                           message: "Tài khoản đã tồn tại") { alert in
+                            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+
+                            }))
+                        }
                     }
+                default:
+                    fatalError("Wrong status code")
                 }
             case .failure(let error):
                 print(error)
@@ -95,7 +132,7 @@ final class SignUpViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    private func validator() -> Owner?{
+    private func validator() -> Renter?{
         do {
             let name = try textFieldsContainer.nameCustomTextField
                 .textField.validateText(type: .name, for: nil)
@@ -110,11 +147,12 @@ final class SignUpViewController: UIViewController {
             let rePassword = try textFieldsContainer.rePassCustomTextField
                 .textField.validateText(type: .repassword, for: password)
             let dateRegister = Date().formatDate(format: "dd/MM/yyyy")
-            let owner = Owner(id: nil, username: username,
+            let renter = Renter(id: nil, username: username,
                               name: name, password: rePassword,
                               phone: phone, mail: mail,
-                              accountStatus: 1, dateRegister: dateRegister)
-            return owner
+                              accountStatus: 1, dateRegister: dateRegister,
+                              fbUrl: nil)
+            return renter
         } catch {
             let errorMessage = (error as! ValidatorError).message
             print(errorMessage)

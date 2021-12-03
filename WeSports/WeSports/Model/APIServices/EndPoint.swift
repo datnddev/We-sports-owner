@@ -8,9 +8,12 @@
 import Foundation
 
 enum EndPoint: String {
-    case login = "/v1/owner/login"
-    case register = "/v1/owner/register"
-    case update = "/v1/owner/update"
-    case delete = "/v1/owner/delete"
-    case detail = "/v1/owner/detail"
+    case login = "/v1/renter/login"
+    case register = "/v1/renter/register"
+    case update = "/v1/renter/update"
+    case delete = "/v1/renter/delete"
+    case detail = "/v1/renter/detail"
+    case sendMail = "/sendmail"
+    
+    case listPitch = "/v1/pitch/list"
 }

@@ -22,12 +22,23 @@ enum RootViewController {
     static func mainRootView() -> UIViewController {
         let homeVC = HomeViewController()
         homeVC.tabBarItem = UITabBarItem(
-            title: "Home", image: UIImage(systemName: "house.fill"), selectedImage: nil)
+            title: "Home",
+            image: UIImage(systemName: "house.fill"),
+            selectedImage: nil)
         let homeNav = UINavigationController(rootViewController: homeVC)
+        homeNav.navigationBar.isHidden = true
+        
+        let searchVC = SearchViewController()
+        searchVC.tabBarItem = UITabBarItem(
+            title: "Search",
+            image: UIImage(systemName: "magnifyingglass.circle.fill"),
+            selectedImage: nil)
+        let searchNav = UINavigationController(rootViewController: searchVC)
+        searchNav.navigationBar.isHidden = true
         
         let tabBarVc = UITabBarController()
         UITabBar.appearance().tintColor = .hex_211A2C
-        tabBarVc.viewControllers = [homeNav]
+        tabBarVc.viewControllers = [homeNav, searchNav]
         return tabBarVc
     }
 }
