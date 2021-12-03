@@ -44,16 +44,24 @@ final class LoginViewController: UIViewController {
     }
     
     @IBAction func loginDidTapped(_ sender: Any) {
+        view.endEditing(true)
         guard let param = validator() else { return }
+        addLoadingScreen()
         APIManager.shared.postRequest(
             url: GetUrl.baseUrl(endPoint: .login),
             params: param) { result in
+            defer {
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
+                    self.removeLoadingScreen()
+                }
+            }
             switch result {
             case .success(let data):
                 do {
-                    let response = try JSONDecoder().decode(LoginResponse.self, from: data)
+                    let response = try JSONDecoder().decode(AuthResponse.self, from: data)
                     switch response.status {
-                    case LoginStatus.notVerify.rawValue:
+                    case AuthStatus.notVerify.rawValue:
                         DispatchQueue.main.async { [weak self] in
                             guard let self = self else { return }
                             self.showAlertAuth(
@@ -69,7 +77,7 @@ final class LoginViewController: UIViewController {
                                 alert.addAction(cancelAlert)
                             }
                         }
-                    case LoginStatus.fail.rawValue:
+                    case AuthStatus.fail.rawValue:
                         DispatchQueue.main.async { [weak self] in
                             guard let self = self else { return }
                             self.showAlertAuth(
@@ -79,8 +87,8 @@ final class LoginViewController: UIViewController {
                                                               style: .default, handler: nil))
                             }
                         }
-                    case LoginStatus.succes.rawValue:
-                        guard let owner = response.owner else { return }
+                    case AuthStatus.succes.rawValue:
+                        guard let owner = response.renter else { return }
                         UserDefaults.standard.setValue(owner.id, forKey: Constant.loggedKey)
                         DispatchQueue.main.async { [weak self] in
                             guard let self = self else { return }
@@ -104,7 +112,7 @@ final class LoginViewController: UIViewController {
                 type: .username, for: nil)
             let password = try passwordCustomTextField.textField.validateText(
                 type: .password, for: nil)
-            return ["ownerUsername":username, "ownerPassword":password]
+            return ["renterUsername":username, "renterPassword":password]
         } catch {
             showAlertAuth(title: "Hãy kiểm tra lại",
                           message: (error as! ValidatorError).message) { alert in

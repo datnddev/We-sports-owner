@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PromoHomeCollectionViewCell" customModule="WeSports" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="399" height="119"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="399" height="119"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stadium" translatesAutoresizingMaskIntoConstraints="NO" id="7S8-G2-bnV">
+                        <rect key="frame" x="284" y="12" width="95" height="95"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Khuyến mãi 50k" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTR-tT-yxd">
+                        <rect key="frame" x="20" y="12" width="244" height="24"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lấy mã ngay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFo-fC-zb2">
+                        <rect key="frame" x="20" y="56" width="98" height="21"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" red="0.98431372549019602" green="0.68235294117647061" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="nFo-fC-zb2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="2hr-49-a1L"/>
+                <constraint firstItem="7S8-G2-bnV" firstAttribute="leading" secondItem="hTR-tT-yxd" secondAttribute="trailing" constant="20" id="4Wl-98-OHf"/>
+                <constraint firstAttribute="trailing" secondItem="7S8-G2-bnV" secondAttribute="trailing" constant="20" id="HGQ-sY-dcW"/>
+                <constraint firstItem="7S8-G2-bnV" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="KlP-gw-OnY"/>
+                <constraint firstItem="7S8-G2-bnV" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.8" id="YOy-MP-rce"/>
+                <constraint firstItem="hTR-tT-yxd" firstAttribute="top" secondItem="7S8-G2-bnV" secondAttribute="top" id="lqI-dc-E6V"/>
+                <constraint firstItem="hTR-tT-yxd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="nPK-NF-BAX"/>
+                <constraint firstItem="7S8-G2-bnV" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.8" id="omb-He-Kb8"/>
+                <constraint firstItem="nFo-fC-zb2" firstAttribute="top" secondItem="hTR-tT-yxd" secondAttribute="bottom" constant="20" id="vhR-xp-JcH"/>
+            </constraints>
+            <size key="customSize" width="399" height="119"/>
+            <connections>
+                <outlet property="titleLabel" destination="hTR-tT-yxd" id="wMU-Di-vyH"/>
+            </connections>
+            <point key="canvasLocation" x="384.78260869565219" y="98.102678571428569"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="stadium" width="128" height="128"/>
+    </resources>
+</document>

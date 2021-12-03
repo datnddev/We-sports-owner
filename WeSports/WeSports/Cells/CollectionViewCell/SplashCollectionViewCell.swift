@@ -15,7 +15,6 @@ class SplashCollectionViewCell: UICollectionViewCell, ReusableView {
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundColor = .hex_211A2C
-//        splashImageView.contentMode = .as
     }
     
     func configure(splash: SplashModel) {
