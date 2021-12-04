@@ -93,7 +93,7 @@ class HomeTableViewCell: UITableViewCell, ReusableView {
         section.boundarySupplementaryItems = [header, footer]
 
         section.orthogonalScrollingBehavior = .paging
-        section.visibleItemsInvalidationHandler = { [weak self] visibleItems, point, environment in
+        section.visibleItemsInvalidationHandler = { visibleItems, point, environment in
             NotificationCenter.default.post(
                 name: Notification.Name(PageFooterCollectionReusableView.NotificationChangeCurrentPage),
                 object: visibleItems.last!.indexPath.row)
