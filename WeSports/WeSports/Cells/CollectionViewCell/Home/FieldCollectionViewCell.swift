@@ -15,8 +15,11 @@ class FieldCollectionViewCell: UICollectionViewCell, ReusableView {
     @IBOutlet private weak var rateLabel: UILabel!
     @IBOutlet private weak var slotLabel: UILabel!
     @IBOutlet private weak var bottomUIView: UIView!
+    @IBOutlet private weak var distanceUIView: UIView!
     @IBOutlet private weak var distanceLabel: UILabel!
     @IBOutlet private weak var priceLabel: UILabel!
+    private var currentPitchDetail: PitchDetail? = nil
+    var pitchDetailAction: ((PitchDetail) -> Void)? = nil
     
     func configure(pitchDetail: PitchDetail) {
         if let imageUrl = pitchDetail.images?.first {
@@ -25,7 +28,7 @@ class FieldCollectionViewCell: UICollectionViewCell, ReusableView {
             fieldImageView.image = UIImage(named: "fieldDefault")
         }
         nameLabel.text = pitchDetail.pitchName
-        addressLabel.text = "\(pitchDetail.pitchAdress.district.name), \(pitchDetail.pitchAdress.city.name)"
+        addressLabel.text = "\(pitchDetail.pitchAdress.district!.name), \(pitchDetail.pitchAdress.city!.name)"
         priceLabel.text = "\(pitchDetail.minPrice.roundedWithAbbreviations) - "
         + "\(pitchDetail.maxPrice.roundedWithAbbreviations)"
         
@@ -36,13 +39,19 @@ class FieldCollectionViewCell: UICollectionViewCell, ReusableView {
                     .distanceTo(toLocation: CLLocation(
                                     latitude: latitude,
                                     longitude: longtitude)) else {
+                distanceUIView.isHidden = true
                 return
             }
-            
-            distanceLabel.text = "\(String(format: "%.0f", distance/1000))Km"
+            distanceLabel.text = "\(String(format: "%.1f", distance/1000))Km"
         } else {
-            distanceLabel.text = "error"
+            distanceLabel.text = ""
+            distanceUIView.isHidden = true
         }
+        
+        pitchDetailAction = { pitch in
+            print(pitch)
+        }
+        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pitchDidTapped)))
     }
     
     override func awakeFromNib() {
@@ -65,5 +74,10 @@ class FieldCollectionViewCell: UICollectionViewCell, ReusableView {
         layer.masksToBounds = false
         bottomUIView.makeRadius(radius: 10, mask: [.layerMinXMaxYCorner, .layerMaxXMaxYCorner])
         fieldImageView.layer.cornerRadius = 10
+    }
+    
+    @objc
+    private func pitchDidTapped() {
+        pitchDetailAction?(currentPitchDetail!)
     }
 }

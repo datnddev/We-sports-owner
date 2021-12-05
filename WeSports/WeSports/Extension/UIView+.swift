@@ -25,6 +25,11 @@ extension UIView {
         layer.maskedCorners = mask
     }
     
+    func makeBorder(width: CGFloat = 1, color: UIColor = UIColor.systemGray5) {
+        layer.borderWidth = width
+        layer.borderColor = color.cgColor
+    }
+    
     func addTopBorderWithColor(color: UIColor, width: CGFloat) {
         let border = CALayer()
         border.backgroundColor = color.cgColor
