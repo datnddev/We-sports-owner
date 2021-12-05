@@ -39,7 +39,14 @@ final class SearchViewController: UIViewController {
             }
         }
     }
-
+    private var sideMenu: SideMenuUIView = {
+        let sideMenu = SideMenuUIView(frame: CGRect(
+                                        x: UIScreen.main.bounds.width,
+                                        y: 0,
+                                        width: UIScreen.main.bounds.width - 50,
+                                        height: UIScreen.main.bounds.height))
+        return sideMenu
+    }()
     private var pitchs = [PitchDetail]() {
         didSet {
             pitchCollectionView.reloadData()
@@ -92,6 +99,9 @@ final class SearchViewController: UIViewController {
         case .highestPrice:
             self.pitchs = self.pitchs.sorted(by: {$0.maxPrice > $1.maxPrice})
         case .distance:
+            if LocationManager.shared.getCurrentLocation() == nil {
+                return
+            }
             self.pitchs = self.pitchs.sorted(by: { pitch1, pitch2 in
                 guard let location1 = pitch1.pitchAdress.location,
                       let latitude1 = CLLocationDegrees(location1.latitude),
@@ -112,8 +122,6 @@ final class SearchViewController: UIViewController {
             })
         case .rating:
             self.pitchs = self.pitchs.sorted(by: {$0.minPrice < $1.minPrice})
-        default:
-            break
         }
     }
     
@@ -121,6 +129,10 @@ final class SearchViewController: UIViewController {
         sortUIView.addGestureRecognizer(UITapGestureRecognizer(
                                             target: self,
                                             action: #selector(sortingDidTapped)))
+        filterUIView.isUserInteractionEnabled = true
+        filterUIView.addGestureRecognizer(UITapGestureRecognizer(
+                                            target: self,
+                                            action: #selector(filterDidTapped)))
     }
     
     @objc
@@ -128,26 +140,104 @@ final class SearchViewController: UIViewController {
         sortDropDown.show()
     }
     
+    @objc
+    private func filterDidTapped() {
+        //blur effect when open menu
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = self.view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.view.addSubview(blurEffectView)
+        
+        //menu
+        view.addSubview(sideMenu)
+        
+        sideMenu.cancelAction = {
+            UIView.animate(withDuration: 0.5,
+                           delay: 0,
+                           usingSpringWithDamping: 0.8,
+                           initialSpringVelocity: 0,
+                           options: .curveEaseOut) {
+                
+                self.sideMenu.frame.origin.x = UIScreen.main.bounds.width
+            }
+            blurEffectView.removeFromSuperview()
+        }
+        
+        sideMenu.filterAction = { filter in
+            self.pitchs.removeAll()
+            self.getPitchs(filter: filter) { pitchsResponse in
+                var pitchsFilter = pitchsResponse
+                //filter by price
+                if let minPrice = filter.minPrice,
+                   let maxPrice = filter.maxPrice {
+                    pitchsFilter = pitchsFilter.filter{
+                        $0.minPrice >= minPrice &&
+                            $0.minPrice <= maxPrice &&
+                            $0.maxPrice >= minPrice &&
+                            $0.maxPrice <= maxPrice
+                    }
+                }
+                //filter by distance
+                if filter.distance < 99 {
+                    pitchsFilter = pitchsFilter.filter({ pitchDetail in
+                        guard let location = pitchDetail.pitchAdress.location,
+                              let latitude = CLLocationDegrees(location.latitude),
+                              let longtitude = CLLocationDegrees(location.longitude) else { return false}
+                        let cllocation = CLLocation(latitude: latitude, longitude: longtitude)
+                        guard let distancePitch = LocationManager.shared.distanceTo(toLocation: cllocation) else {
+                            return false
+                        }
+                        return distancePitch/1000 <= filter.distance
+                    })
+                }
+                
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
+                    self.pitchs = pitchsFilter
+                }
+            }
+        }
+        //animated
+        UIView.animate(withDuration: 0.5,
+                       delay: 0,
+                       usingSpringWithDamping: 0.8,
+                       initialSpringVelocity: 0,
+                       options: .curveEaseOut) {
+            
+            self.sideMenu.frame.origin.x = self.view.frame.size.width - self.sideMenu.bounds.width
+        }
+    }
+        
     private func loadData() {
-        currentCity { city in
-            self.loadPitchs(city: city)
+        LocationManager.currentCity { city in
+            let filter = Filter(addressCity: city,
+                                addressDistrict: nil,
+                                minPrice: nil,
+                                maxPrice: nil,
+                                distance: 0)
+            self.getPitchs(filter: filter) { pitchsResponse in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
+                    self.pitchs = pitchsResponse
+                        .filter { $0.pitchAdress.location != nil}
+                        .sorted(by: {$0.minPrice < $1.minPrice})
+                }
+            }
             LocationManager.shared.stopUpdatingLocation()
         }
     }
     
-    private func loadPitchs(city: City) {
-        let params = ["addressCity": city]
-        APIManager.shared.postRequest(url: GetUrl.baseUrl(endPoint: .listPitch)) { result in
+    private func getPitchs(filter: Filter, completion: (([PitchDetail]) -> Void)?) {
+        APIManager.shared.postRequest(url: GetUrl.baseUrl(endPoint: .listPitch), params: filter) { result in
             switch result {
             case .success(let data):
                 do {
                     let response = try JSONDecoder().decode(ListPitchResponse.self, from: data)
-                    guard response.message == "Get all pitch success" else {
+                    guard response.status == 1 else {
                         return
                     }
-                    DispatchQueue.main.async {
-                        self.pitchs = response.data.filter { $0.pitchAdress.location != nil}
-                    }
+                    completion?(response.data)
                 } catch {
                     print(String(describing: error))
                 }
@@ -195,4 +285,9 @@ extension SearchViewController: UICollectionViewDataSource {
     }
 }
 
-extension SearchViewController: UICollectionViewDelegate { }
+extension SearchViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! FieldCollectionViewCell
+        print(pitchs[indexPath.row])
+    }
+}

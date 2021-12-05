@@ -8,9 +8,9 @@
 import Foundation
 
 struct PitchAddress {
-    var city: City
-    var district: District
-    var street: String
+    var city: City?
+    var district: District?
+    var street: String?
     var location: Location?
 }
 

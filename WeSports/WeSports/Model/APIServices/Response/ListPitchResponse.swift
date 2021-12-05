@@ -10,4 +10,5 @@ import Foundation
 struct ListPitchResponse: Codable {
     var message: String
     var data: [PitchDetail]
+    var status: Int
 }

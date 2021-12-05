@@ -159,6 +159,7 @@
                 <outlet property="addressLabel" destination="Fuu-Fx-2uw" id="QLA-cx-GBI"/>
                 <outlet property="bottomUIView" destination="9m1-4Y-6vC" id="8Yy-7O-wHV"/>
                 <outlet property="distanceLabel" destination="tPI-OZ-Ooo" id="bcx-Wr-Jd6"/>
+                <outlet property="distanceUIView" destination="n0y-G3-KDY" id="N6w-az-dA3"/>
                 <outlet property="fieldImageView" destination="swL-0C-Xbs" id="N7i-sO-a7V"/>
                 <outlet property="nameLabel" destination="E3d-ti-jtw" id="ZZb-tO-6Dr"/>
                 <outlet property="priceLabel" destination="e8K-9u-v90" id="5zx-gS-nbs"/>

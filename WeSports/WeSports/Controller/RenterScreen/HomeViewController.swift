@@ -29,14 +29,18 @@ final class HomeViewController: UIViewController {
     }
     
     private func setupView() {
-        topUIView.makeRadius(radius: 40, mask: [.layerMinXMaxYCorner, .layerMaxXMaxYCorner])
+        topUIView.makeRadius(radius: 40,
+                             mask: [.layerMinXMaxYCorner, .layerMaxXMaxYCorner])
     }
     
     private func loadData() {
-        currentCity { city in
-            self.locationLabel.text = city.nameWithType
-            self.loadPitchs(city: city)
-            LocationManager.shared.stopUpdatingLocation()
+        self.locationLabel.text = "Vị trí không xác định"
+        if LocationManager.shared.getCurrentLocation() != nil {
+            LocationManager.currentCity { city in
+                self.locationLabel.text = city.nameWithType
+                self.loadPitchs(city: city)
+                LocationManager.shared.stopUpdatingLocation()
+            }
         }
     }
     
@@ -48,7 +52,7 @@ final class HomeViewController: UIViewController {
             case .success(let data):
                 do {
                     let response = try JSONDecoder().decode(ListPitchResponse.self, from: data)
-                    guard response.message == "Get all pitch success" else {
+                    guard response.status == 1 else {
                         return
                     }
                     DispatchQueue.main.async {
