@@ -15,7 +15,7 @@ extension PitchDetail {
                 pitchName: "Sân 01",
                 pitchType: PitchType(id: "0", type: "Bóng đá", icon: "soccer"),
                 pitchSize: 5,
-                pitchAdress: PitchAddress(
+                pitchAddress: PitchAddress(
                     city: City(
                         name: "001",
                         slug: "Đà Nẵng",
@@ -52,7 +52,7 @@ extension PitchDetail {
                 pitchName: "Sân 02",
                 pitchType: PitchType(id: "0", type: "Bóng đá", icon: "soccer"),
                 pitchSize: 5,
-                pitchAdress: PitchAddress(
+                pitchAddress: PitchAddress(
                     city: City(
                         name: "001",
                         slug: "Đà Nẵng",

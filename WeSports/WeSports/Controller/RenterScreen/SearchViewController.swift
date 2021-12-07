@@ -103,10 +103,10 @@ final class SearchViewController: UIViewController {
                 return
             }
             self.pitchs = self.pitchs.sorted(by: { pitch1, pitch2 in
-                guard let location1 = pitch1.pitchAdress.location,
+                guard let location1 = pitch1.pitchAddress.location,
                       let latitude1 = CLLocationDegrees(location1.latitude),
                       let longtitude1 = CLLocationDegrees(location1.longitude),
-                      let location2 = pitch2.pitchAdress.location,
+                      let location2 = pitch2.pitchAddress.location,
                       let latitude2 = CLLocationDegrees(location2.latitude),
                       let longtitude2 = CLLocationDegrees(location2.longitude) else {
                     return false
@@ -181,7 +181,7 @@ final class SearchViewController: UIViewController {
                 //filter by distance
                 if filter.distance < 99 {
                     pitchsFilter = pitchsFilter.filter({ pitchDetail in
-                        guard let location = pitchDetail.pitchAdress.location,
+                        guard let location = pitchDetail.pitchAddress.location,
                               let latitude = CLLocationDegrees(location.latitude),
                               let longtitude = CLLocationDegrees(location.longitude) else { return false}
                         let cllocation = CLLocation(latitude: latitude, longitude: longtitude)
@@ -220,7 +220,7 @@ final class SearchViewController: UIViewController {
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
                     self.pitchs = pitchsResponse
-                        .filter { $0.pitchAdress.location != nil}
+                        .filter { $0.pitchAddress.location != nil}
                         .sorted(by: {$0.minPrice < $1.minPrice})
                 }
             }
@@ -287,7 +287,11 @@ extension SearchViewController: UICollectionViewDataSource {
 
 extension SearchViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! FieldCollectionViewCell
-        print(pitchs[indexPath.row])
+        let pitchVC = PitchDetailViewController(
+            nibName: "PitchDetailViewController",
+            bundle: nil)
+        pitchVC.modalPresentationStyle = .fullScreen
+        pitchVC.pitch = pitchs[indexPath.item]
+        present(pitchVC, animated: true, completion: nil)
     }
 }

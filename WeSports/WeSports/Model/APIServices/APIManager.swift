@@ -153,6 +153,7 @@ final class APIManager {
                 completion(.failure(APIError.decodeError))
                 return
             }
+            imageCaches.insert(image, for: key)
             completion(.success(image))
         }
         task.resume()

@@ -18,8 +18,6 @@ class FieldCollectionViewCell: UICollectionViewCell, ReusableView {
     @IBOutlet private weak var distanceUIView: UIView!
     @IBOutlet private weak var distanceLabel: UILabel!
     @IBOutlet private weak var priceLabel: UILabel!
-    private var currentPitchDetail: PitchDetail? = nil
-    var pitchDetailAction: ((PitchDetail) -> Void)? = nil
     
     func configure(pitchDetail: PitchDetail) {
         if let imageUrl = pitchDetail.images?.first {
@@ -28,11 +26,11 @@ class FieldCollectionViewCell: UICollectionViewCell, ReusableView {
             fieldImageView.image = UIImage(named: "fieldDefault")
         }
         nameLabel.text = pitchDetail.pitchName
-        addressLabel.text = "\(pitchDetail.pitchAdress.district!.name), \(pitchDetail.pitchAdress.city!.name)"
+        addressLabel.text = "\(pitchDetail.pitchAddress.district!.name), \(pitchDetail.pitchAddress.city!.name)"
         priceLabel.text = "\(pitchDetail.minPrice.roundedWithAbbreviations) - "
         + "\(pitchDetail.maxPrice.roundedWithAbbreviations)"
         
-        if let location = pitchDetail.pitchAdress.location,
+        if let location = pitchDetail.pitchAddress.location,
            let latitude = CLLocationDegrees(location.latitude),
            let longtitude = CLLocationDegrees(location.longitude) {
             guard let distance = LocationManager.shared
@@ -47,11 +45,6 @@ class FieldCollectionViewCell: UICollectionViewCell, ReusableView {
             distanceLabel.text = ""
             distanceUIView.isHidden = true
         }
-        
-        pitchDetailAction = { pitch in
-            print(pitch)
-        }
-        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pitchDidTapped)))
     }
     
     override func awakeFromNib() {
@@ -74,10 +67,5 @@ class FieldCollectionViewCell: UICollectionViewCell, ReusableView {
         layer.masksToBounds = false
         bottomUIView.makeRadius(radius: 10, mask: [.layerMinXMaxYCorner, .layerMaxXMaxYCorner])
         fieldImageView.layer.cornerRadius = 10
-    }
-    
-    @objc
-    private func pitchDidTapped() {
-        pitchDetailAction?(currentPitchDetail!)
     }
 }
