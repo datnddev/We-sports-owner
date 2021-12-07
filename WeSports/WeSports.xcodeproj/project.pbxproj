@@ -54,6 +54,13 @@
 		AB6AD456275B22910052F373 /* LocationManager+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6AD455275B22910052F373 /* LocationManager+.swift */; };
 		AB6E447B275C659300ED3EE7 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6E447A275C659300ED3EE7 /* Filter.swift */; };
 		AB6E447D275C68EE00ED3EE7 /* ListPitchParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6E447C275C68EE00ED3EE7 /* ListPitchParams.swift */; };
+		AB6E4480275CADF100ED3EE7 /* PitchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6E447E275CADF100ED3EE7 /* PitchDetailViewController.swift */; };
+		AB6E4481275CADF100ED3EE7 /* PitchDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB6E447F275CADF100ED3EE7 /* PitchDetailViewController.xib */; };
+		AB6E4483275CAE8900ED3EE7 /* UICollectionViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6E4482275CAE8900ED3EE7 /* UICollectionViewCell+.swift */; };
+		AB6E4485275CB75400ED3EE7 /* ImagePitchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6E4484275CB75400ED3EE7 /* ImagePitchDetailView.swift */; };
+		AB6E4487275CB77F00ED3EE7 /* ImagePitchDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB6E4486275CB77F00ED3EE7 /* ImagePitchDetailView.xib */; };
+		AB6E448A275CB89900ED3EE7 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6E4488275CB89900ED3EE7 /* ImageCollectionViewCell.swift */; };
+		AB6E448B275CB89900ED3EE7 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB6E4489275CB89900ED3EE7 /* ImageCollectionViewCell.xib */; };
 		AB748E3227473F1500DC2446 /* PageFooterCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB748E3127473F1500DC2446 /* PageFooterCollectionReusableView.swift */; };
 		AB748E41274795DB00DC2446 /* TicketCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB748E3F274795DB00DC2446 /* TicketCollectionViewCell.xib */; };
 		AB748E442747961500DC2446 /* TicketCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB748E432747961500DC2446 /* TicketCollectionViewCell.swift */; };
@@ -157,6 +164,16 @@
 		ABF9946527507D15005BFC95 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF9945F27507D15005BFC95 /* Price.swift */; };
 		ABF9946627507D15005BFC95 /* Pitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF9946027507D15005BFC95 /* Pitch.swift */; };
 		ABF9946727507D15005BFC95 /* PitchAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF9946127507D15005BFC95 /* PitchAddress.swift */; };
+		ABFECD47275DAFC000FB97F8 /* InforPitchViewPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFECD46275DAFC000FB97F8 /* InforPitchViewPager.swift */; };
+		ABFECD58275DC05900FB97F8 /* TabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFECD56275DC05900FB97F8 /* TabCollectionViewCell.swift */; };
+		ABFECD59275DC05900FB97F8 /* PageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFECD57275DC05900FB97F8 /* PageCollectionViewCell.swift */; };
+		ABFECD5D275DC09100FB97F8 /* PagedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFECD5A275DC09000FB97F8 /* PagedView.swift */; };
+		ABFECD5E275DC09100FB97F8 /* TabbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFECD5B275DC09100FB97F8 /* TabbedView.swift */; };
+		ABFECD5F275DC09100FB97F8 /* ViewPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFECD5C275DC09100FB97F8 /* ViewPager.swift */; };
+		ABFECD61275DC0D300FB97F8 /* AppTabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFECD60275DC0D300FB97F8 /* AppTabItemView.swift */; };
+		ABFECD63275DC49700FB97F8 /* AboutPitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFECD62275DC49700FB97F8 /* AboutPitchView.swift */; };
+		ABFECD66275DD49000FB97F8 /* InforPitchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFECD64275DD49000FB97F8 /* InforPitchCollectionViewCell.swift */; };
+		ABFECD67275DD49000FB97F8 /* InforPitchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABFECD65275DD49000FB97F8 /* InforPitchCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -210,6 +227,13 @@
 		AB6AD455275B22910052F373 /* LocationManager+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationManager+.swift"; sourceTree = "<group>"; };
 		AB6E447A275C659300ED3EE7 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		AB6E447C275C68EE00ED3EE7 /* ListPitchParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPitchParams.swift; sourceTree = "<group>"; };
+		AB6E447E275CADF100ED3EE7 /* PitchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchDetailViewController.swift; sourceTree = "<group>"; };
+		AB6E447F275CADF100ED3EE7 /* PitchDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PitchDetailViewController.xib; sourceTree = "<group>"; };
+		AB6E4482275CAE8900ED3EE7 /* UICollectionViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+.swift"; sourceTree = "<group>"; };
+		AB6E4484275CB75400ED3EE7 /* ImagePitchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePitchDetailView.swift; sourceTree = "<group>"; };
+		AB6E4486275CB77F00ED3EE7 /* ImagePitchDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagePitchDetailView.xib; sourceTree = "<group>"; };
+		AB6E4488275CB89900ED3EE7 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		AB6E4489275CB89900ED3EE7 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		AB748E3127473F1500DC2446 /* PageFooterCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageFooterCollectionReusableView.swift; sourceTree = "<group>"; };
 		AB748E3F274795DB00DC2446 /* TicketCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TicketCollectionViewCell.xib; sourceTree = "<group>"; };
 		AB748E432747961500DC2446 /* TicketCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -314,6 +338,16 @@
 		ABF9946027507D15005BFC95 /* Pitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pitch.swift; sourceTree = "<group>"; };
 		ABF9946127507D15005BFC95 /* PitchAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitchAddress.swift; sourceTree = "<group>"; };
 		ABF9946827508471005BFC95 /* WeSports.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WeSports.entitlements; sourceTree = "<group>"; };
+		ABFECD46275DAFC000FB97F8 /* InforPitchViewPager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InforPitchViewPager.swift; sourceTree = "<group>"; };
+		ABFECD56275DC05900FB97F8 /* TabCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabCollectionViewCell.swift; sourceTree = "<group>"; };
+		ABFECD57275DC05900FB97F8 /* PageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageCollectionViewCell.swift; sourceTree = "<group>"; };
+		ABFECD5A275DC09000FB97F8 /* PagedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagedView.swift; sourceTree = "<group>"; };
+		ABFECD5B275DC09100FB97F8 /* TabbedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbedView.swift; sourceTree = "<group>"; };
+		ABFECD5C275DC09100FB97F8 /* ViewPager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPager.swift; sourceTree = "<group>"; };
+		ABFECD60275DC0D300FB97F8 /* AppTabItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTabItemView.swift; sourceTree = "<group>"; };
+		ABFECD62275DC49700FB97F8 /* AboutPitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPitchView.swift; sourceTree = "<group>"; };
+		ABFECD64275DD49000FB97F8 /* InforPitchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InforPitchCollectionViewCell.swift; sourceTree = "<group>"; };
+		ABFECD65275DD49000FB97F8 /* InforPitchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InforPitchCollectionViewCell.xib; sourceTree = "<group>"; };
 		B2566A805B1DB458375F7580 /* Pods-WeSports.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeSports.release.xcconfig"; path = "Target Support Files/Pods-WeSports/Pods-WeSports.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -405,6 +439,7 @@
 		AB24E26927434767004148B2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				ABFECD38275D947700FB97F8 /* ViewPager */,
 				AB24E2A12743AA97004148B2 /* CustomTextField.swift */,
 				AB24E2A32743AAA8004148B2 /* CustomTextField.xib */,
 				AB075F072744FBFA0063440F /* InforTextFields.swift */,
@@ -412,6 +447,11 @@
 				AB8A214E2746481500AD1F22 /* RoatingCirclesView.swift */,
 				AB6AD451275B05460052F373 /* SideMenuUIView.swift */,
 				AB6AD453275B05500052F373 /* SideMenuUIView.xib */,
+				AB6E4484275CB75400ED3EE7 /* ImagePitchDetailView.swift */,
+				AB6E4486275CB77F00ED3EE7 /* ImagePitchDetailView.xib */,
+				ABFECD46275DAFC000FB97F8 /* InforPitchViewPager.swift */,
+				ABFECD60275DC0D300FB97F8 /* AppTabItemView.swift */,
+				ABFECD62275DC49700FB97F8 /* AboutPitchView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -445,6 +485,7 @@
 				AB15DB0A2756A22E00AF59CA /* UIImageView+.swift */,
 				ABEF1A7427593625001094BA /* UIApplication+.swift */,
 				AB6AD455275B22910052F373 /* LocationManager+.swift */,
+				AB6E4482275CAE8900ED3EE7 /* UICollectionViewCell+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -486,11 +527,16 @@
 		AB24E2822743610A004148B2 /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				ABFECD3B275D9BDA00FB97F8 /* ViewPager */,
 				AB748E452747AD1800DC2446 /* Home */,
 				AB24E2832743614B004148B2 /* SplashCollectionViewCell.swift */,
 				AB24E2842743614B004148B2 /* SplashCollectionViewCell.xib */,
 				ABEF1A7627596E87001094BA /* BlankDataCollectionViewCell.swift */,
 				ABEF1A7727596E87001094BA /* BlankDataCollectionViewCell.xib */,
+				AB6E4488275CB89900ED3EE7 /* ImageCollectionViewCell.swift */,
+				AB6E4489275CB89900ED3EE7 /* ImageCollectionViewCell.xib */,
+				ABFECD64275DD49000FB97F8 /* InforPitchCollectionViewCell.swift */,
+				ABFECD65275DD49000FB97F8 /* InforPitchCollectionViewCell.xib */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -544,6 +590,8 @@
 				AB8A213F2745EFA700AD1F22 /* HomeViewController.xib */,
 				ABF1929C27508A670038B429 /* SearchViewController.swift */,
 				ABF1929D27508A670038B429 /* SearchViewController.xib */,
+				AB6E447E275CADF100ED3EE7 /* PitchDetailViewController.swift */,
+				AB6E447F275CADF100ED3EE7 /* PitchDetailViewController.xib */,
 			);
 			path = RenterScreen;
 			sourceTree = "<group>";
@@ -697,6 +745,25 @@
 			path = Field;
 			sourceTree = "<group>";
 		};
+		ABFECD38275D947700FB97F8 /* ViewPager */ = {
+			isa = PBXGroup;
+			children = (
+				ABFECD5A275DC09000FB97F8 /* PagedView.swift */,
+				ABFECD5B275DC09100FB97F8 /* TabbedView.swift */,
+				ABFECD5C275DC09100FB97F8 /* ViewPager.swift */,
+			);
+			path = ViewPager;
+			sourceTree = "<group>";
+		};
+		ABFECD3B275D9BDA00FB97F8 /* ViewPager */ = {
+			isa = PBXGroup;
+			children = (
+				ABFECD57275DC05900FB97F8 /* PageCollectionViewCell.swift */,
+				ABFECD56275DC05900FB97F8 /* TabCollectionViewCell.swift */,
+			);
+			path = ViewPager;
+			sourceTree = "<group>";
+		};
 		CAF53D7C0EDE4E17E56464F5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -769,9 +836,11 @@
 				ABD7BC832755F63D0010F857 /* 02.json in Resources */,
 				ABD7BC7F2755F63D0010F857 /* 66.json in Resources */,
 				ABD7BC7D2755F63D0010F857 /* 96.json in Resources */,
+				ABFECD67275DD49000FB97F8 /* InforPitchCollectionViewCell.xib in Resources */,
 				ABD7BC642755F63D0010F857 /* city.json in Resources */,
 				AB24E29E27439A72004148B2 /* LoginViewController.xib in Resources */,
 				AB24E26027434685004148B2 /* LaunchScreen.storyboard in Resources */,
+				AB6E448B275CB89900ED3EE7 /* ImageCollectionViewCell.xib in Resources */,
 				ABD7BC792755F63D0010F857 /* 20.json in Resources */,
 				ABD7BC6A2755F63D0010F857 /* 04.json in Resources */,
 				ABD7BC9A2755F63D0010F857 /* 11.json in Resources */,
@@ -791,6 +860,7 @@
 				ABD7BC7E2755F63D0010F857 /* 17.json in Resources */,
 				ABD7BC9C2755F63D0010F857 /* 60.json in Resources */,
 				ABD7BC922755F63D0010F857 /* 70.json in Resources */,
+				AB6E4481275CADF100ED3EE7 /* PitchDetailViewController.xib in Resources */,
 				ABD7BC672755F63D0010F857 /* 22.json in Resources */,
 				ABD7BC742755F63D0010F857 /* 64.json in Resources */,
 				ABEF1A7927596E87001094BA /* BlankDataCollectionViewCell.xib in Resources */,
@@ -822,6 +892,7 @@
 				ABD7BC7C2755F63D0010F857 /* 94.json in Resources */,
 				ABD7BC652755F63D0010F857 /* 92.json in Resources */,
 				ABD7BC722755F63D0010F857 /* 15.json in Resources */,
+				AB6E4487275CB77F00ED3EE7 /* ImagePitchDetailView.xib in Resources */,
 				ABD7BC782755F63D0010F857 /* 26.json in Resources */,
 				ABF192AA2750D4200038B429 /* PitchTableViewCell.xib in Resources */,
 				AB24E2862743614B004148B2 /* SplashCollectionViewCell.xib in Resources */,
@@ -898,11 +969,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB24E2742743499F004148B2 /* EndPoint.swift in Sources */,
+				AB6E448A275CB89900ED3EE7 /* ImageCollectionViewCell.swift in Sources */,
 				ABF9946227507D15005BFC95 /* District.swift in Sources */,
 				AB24E28C274365F2004148B2 /* UIView+.swift in Sources */,
 				AB24E29827439956004148B2 /* RootViewController.swift in Sources */,
 				AB24E296274398A5004148B2 /* ChangeRootViewProtocol.swift in Sources */,
 				ABE1333A2745780B00EC9377 /* Date+.swift in Sources */,
+				AB6E4483275CAE8900ED3EE7 /* UICollectionViewCell+.swift in Sources */,
 				ABD7BC242755F5BA0010F857 /* Location.swift in Sources */,
 				AB8A21652746CCEE00AD1F22 /* BothLabelsCollectionReusableView.swift in Sources */,
 				AB6AD456275B22910052F373 /* LocationManager+.swift in Sources */,
@@ -911,16 +984,20 @@
 				ABD7BCA32755F7CB0010F857 /* PitchDetail+.swift in Sources */,
 				AB15DB0B2756A22E00AF59CA /* UIImageView+.swift in Sources */,
 				AB24E29D27439A72004148B2 /* LoginViewController.swift in Sources */,
+				ABFECD47275DAFC000FB97F8 /* InforPitchViewPager.swift in Sources */,
 				AB8A214B27463B1500AD1F22 /* Cache+.swift in Sources */,
 				AB24E2B22744000D004148B2 /* ValidatorType.swift in Sources */,
 				ABF9946427507D15005BFC95 /* City.swift in Sources */,
 				ABEF1A7527593625001094BA /* UIApplication+.swift in Sources */,
+				ABFECD58275DC05900FB97F8 /* TabCollectionViewCell.swift in Sources */,
 				AB24E2AF2743F1A3004148B2 /* SignUpViewController.swift in Sources */,
 				ABEF1A732759217E001094BA /* LocationManager.swift in Sources */,
 				ABD7BC1D2755CCBC0010F857 /* PitchTypeTableViewCell.swift in Sources */,
+				ABFECD63275DC49700FB97F8 /* AboutPitchView.swift in Sources */,
 				ABF192A52750BB450038B429 /* Owner.swift in Sources */,
 				AB24E27F27436047004148B2 /* ReusableView.swift in Sources */,
 				AB24E25827434684004148B2 /* MainViewController.swift in Sources */,
+				ABFECD5F275DC09100FB97F8 /* ViewPager.swift in Sources */,
 				AB695EC427535B1E0002F691 /* HomeTableViewCell.swift in Sources */,
 				AB8A21522746703700AD1F22 /* Promo.swift in Sources */,
 				ABF192A92750D4200038B429 /* PitchTableViewCell.swift in Sources */,
@@ -939,6 +1016,9 @@
 				AB8A21452746384E00AD1F22 /* Cache.swift in Sources */,
 				AB24E27127434965004148B2 /* APIManager.swift in Sources */,
 				AB24E25627434684004148B2 /* SceneDelegate.swift in Sources */,
+				ABFECD5E275DC09100FB97F8 /* TabbedView.swift in Sources */,
+				AB6E4480275CADF100ED3EE7 /* PitchDetailViewController.swift in Sources */,
+				ABFECD5D275DC09100FB97F8 /* PagedView.swift in Sources */,
 				AB24E26F27434946004148B2 /* Constants.swift in Sources */,
 				ABF9946727507D15005BFC95 /* PitchAddress.swift in Sources */,
 				AB8A214D27463C1900AD1F22 /* ImageCacheManager.swift in Sources */,
@@ -949,10 +1029,12 @@
 				AB24E294274393B9004148B2 /* UIViewController+.swift in Sources */,
 				AB24E281274360A9004148B2 /* ReusableView+.swift in Sources */,
 				AB24E2A62743E6BC004148B2 /* Renter.swift in Sources */,
+				AB6E4485275CB75400ED3EE7 /* ImagePitchDetailView.swift in Sources */,
 				ABF9946527507D15005BFC95 /* Price.swift in Sources */,
 				AB24E279274355F4004148B2 /* SplashViewController.swift in Sources */,
 				AB24E288274363AF004148B2 /* SplashModel.swift in Sources */,
 				AB24E27C2743567C004148B2 /* UIColor+.swift in Sources */,
+				ABFECD61275DC0D300FB97F8 /* AppTabItemView.swift in Sources */,
 				ABF192A32750BA780038B429 /* PitchDetail.swift in Sources */,
 				AB8A21402745EFA700AD1F22 /* HomeViewController.swift in Sources */,
 				AB24E2B42744128B004148B2 /* Validator.swift in Sources */,
@@ -960,11 +1042,13 @@
 				ABF1929E27508A670038B429 /* SearchViewController.swift in Sources */,
 				AB6E447D275C68EE00ED3EE7 /* ListPitchParams.swift in Sources */,
 				ABF9946327507D15005BFC95 /* PitchType.swift in Sources */,
+				ABFECD59275DC05900FB97F8 /* PageCollectionViewCell.swift in Sources */,
 				ABF9946627507D15005BFC95 /* Pitch.swift in Sources */,
 				ABD7BC19275517F00010F857 /* LocationService.swift in Sources */,
 				AB24E2B827442DE3004148B2 /* UITextField+.swift in Sources */,
 				AB24E2A82743EC7F004148B2 /* AuthResponse.swift in Sources */,
 				ABD7BCA52756217F0010F857 /* Double+.swift in Sources */,
+				ABFECD66275DD49000FB97F8 /* InforPitchCollectionViewCell.swift in Sources */,
 				AB24E2852743614B004148B2 /* SplashCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

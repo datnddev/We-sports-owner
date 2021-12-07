@@ -57,7 +57,7 @@ final class HomeViewController: UIViewController {
                     }
                     DispatchQueue.main.async {
                         for i in 0..<response.data.count {
-                            guard let location = response.data[i].pitchAdress.location,
+                            guard let location = response.data[i].pitchAddress.location,
                                   let latitude = CLLocationDegrees(location.latitude),
                                   let longtitude = CLLocationDegrees(location.longitude) else { return }
                             let cllocation = CLLocation(latitude: latitude, longitude: longtitude)

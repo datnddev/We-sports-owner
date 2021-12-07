@@ -12,7 +12,7 @@ struct PitchDetail {
     var pitchName: String
     var pitchType: PitchType
     var pitchSize: Int
-    var pitchAdress: PitchAddress
+    var pitchAddress: PitchAddress
     var pitchOpen: String
     var pitchClose: String
     var timePerRent: Int
@@ -31,7 +31,7 @@ extension PitchDetail: Codable {
         case pitchName = "pitchName"
         case pitchType = "pitchType"
         case pitchSize = "pitchSize"
-        case pitchAdress = "pitchAddress"
+        case pitchAddress = "pitchAddress"
         case pitchOpen = "pitchOpen"
         case pitchClose = "pitchClose"
         case timePerRent = "timePerRent"
