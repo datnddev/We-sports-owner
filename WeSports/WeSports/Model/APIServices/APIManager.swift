@@ -16,10 +16,10 @@ final class APIManager {
     
     func postRequest<E: Encodable>(url: String,
                                    params: E,
-                                   completion: @escaping (Result<Data, APIError>) -> Void) {
+                                   completion: @escaping (Result<Data, APIError>) -> Void) -> UUID? {
         guard let url = URL(string: url) else {
             completion(.failure(.urlError))
-            return
+            return nil
         }
         
         var request = URLRequest(url: url)
@@ -28,22 +28,28 @@ final class APIManager {
         
         //encode data
         do {
-            let data = try JSONEncoder().encode(params)
-            print(String(data: data, encoding: .utf8))
+//            let data = try JSONEncoder().encode(params)
+//            print(String(data: data, encoding: .utf8) as Any)
             request.httpBody = try JSONEncoder().encode(params)
         } catch {
             completion(.failure(.encodeError))
         }
         
         //send request
-        URLSession.shared.dataTask(with: request) { data, response, _ in
+        let taskID = UUID()
+        let task = URLSession.shared.dataTask(with: request) { data, response, _ in
             guard let data = data else {
-                print(response)
+                print("Api manager/ post request response: \(response as Any)")
                 completion(.failure(.responseError))
+                self.runningTasks.removeValue(forKey: taskID)
                 return
             }
             completion(.success(data))
-        }.resume()
+            self.runningTasks.removeValue(forKey: taskID)
+        }
+        task.resume()
+        runningTasks[taskID] = task
+        return taskID
     }
     
     func postRequest(url: String, completion: @escaping (Result<Data, APIError>) -> Void) {
@@ -116,7 +122,7 @@ final class APIManager {
         //send request
         URLSession.shared.dataTask(with: request) { data, response, _ in
             guard let data = data else {
-                print(response)
+                print("APIManager: \(String(describing: response))")
                 completion(.failure(.responseError))
                 return
             }
@@ -162,7 +168,11 @@ final class APIManager {
     }
     
     func cancelTask(with taskID: UUID) {
-        runningTasks[taskID]?.cancel()
+        guard let task = runningTasks[taskID] else {
+            return
+        }
+        task.cancel()
         runningTasks.removeValue(forKey: taskID)
+        print("Remove task \(taskID)")
     }
 }

@@ -34,7 +34,7 @@ class PagedView: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDat
         }
     }
     
-    private lazy var collectionView: UICollectionView = {
+    lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(

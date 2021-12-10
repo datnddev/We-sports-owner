@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TimePerRentCollectionViewCell" customModule="WeSports" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="312" height="30"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="312" height="30"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thời gian:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yj-ze-rQY">
+                        <rect key="frame" x="0.0" y="6" width="69" height="18"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                        <color key="textColor" red="0.12941176469999999" green="0.1019607843" blue="0.134976134" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ze0-Kz-hVU">
+                        <rect key="frame" x="79" y="6" width="42" height="18"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                        <color key="textColor" red="0.12941176469999999" green="0.1019607843" blue="0.134976134" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120k" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fl3-Va-W2U">
+                        <rect key="frame" x="276" y="6" width="36" height="18"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                        <color key="textColor" red="0.12941176469999999" green="0.1019607843" blue="0.134976134" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="đến 20:59" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSn-Q9-FKp">
+                        <rect key="frame" x="125" y="6" width="73" height="18"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                        <color key="textColor" red="0.12941176469999999" green="0.1019607843" blue="0.134976134" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="fl3-Va-W2U" secondAttribute="trailing" id="2DH-jE-QHq"/>
+                <constraint firstItem="Ze0-Kz-hVU" firstAttribute="leading" secondItem="9yj-ze-rQY" secondAttribute="trailing" constant="10" id="7tB-cf-GVl"/>
+                <constraint firstItem="fSn-Q9-FKp" firstAttribute="leading" secondItem="Ze0-Kz-hVU" secondAttribute="trailing" constant="4" id="Ctr-OA-MdI"/>
+                <constraint firstItem="9yj-ze-rQY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="N6r-BG-ft4"/>
+                <constraint firstItem="9yj-ze-rQY" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="iTN-PZ-65J"/>
+                <constraint firstItem="fl3-Va-W2U" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="u1v-hO-Hdx"/>
+                <constraint firstItem="fSn-Q9-FKp" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="xKk-gX-czc"/>
+                <constraint firstItem="Ze0-Kz-hVU" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="zee-uC-bny"/>
+            </constraints>
+            <size key="customSize" width="312" height="30"/>
+            <connections>
+                <outlet property="endTimeLbl" destination="fSn-Q9-FKp" id="nz3-fs-R48"/>
+                <outlet property="priceLbl" destination="fl3-Va-W2U" id="BYh-D9-Wmr"/>
+                <outlet property="startTimeLbl" destination="Ze0-Kz-hVU" id="j22-Bm-Jg3"/>
+            </connections>
+            <point key="canvasLocation" x="201.44927536231884" y="54.241071428571423"/>
+        </collectionViewCell>
+    </objects>
+</document>

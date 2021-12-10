@@ -10,5 +10,7 @@ pod 'DropDown'
 pod 'Firebase/Core'
 pod 'Firebase/Storage'
 pod 'RangeSeekSlider'
+pod 'FSCalendar'
+pod 'lottie-ios'
 
 end
