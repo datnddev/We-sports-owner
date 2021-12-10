@@ -188,7 +188,6 @@ final class BookingViewController: UIViewController {
         animationView.loopMode = .loop
         statusView.addSubview(animationView)
         animationView.play()
-        
         APIManager.shared.postRequest(
             url: GetUrl.baseUrl(endPoint: .addBill),
             params: bill) { result in
@@ -197,7 +196,6 @@ final class BookingViewController: UIViewController {
                 do {
                     let billResponse = try JSONDecoder().decode(BillResponse.self,
                                                             from: data)
-                    print(billResponse)
                     if billResponse.status == 1 {
                         DispatchQueue.main.async { [weak self] in
                             guard let self = self else { return }
