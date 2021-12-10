@@ -22,4 +22,11 @@ extension Double {
             return "\(String(format: "%.0f", number/1000)).000đ"
         }
     }
+    
+    func convertToVND() -> String? {
+        let formatter = NumberFormatter()
+        formatter.locale = Locale(identifier: "vi_VN")
+        formatter.numberStyle = .currency
+        return formatter.string(from: self as NSNumber)
+    }
 }

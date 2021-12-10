@@ -34,6 +34,11 @@ class PitchDetailViewController: UIViewController {
         loadData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
+    
     private func loadData() {
         guard let pitch = pitch else {
             return
@@ -81,6 +86,12 @@ class PitchDetailViewController: UIViewController {
     }
     
     //MARK: Action
+    @IBAction func bookingDidTapped(_ sender: Any) {
+        let bookingVC = BookingViewController(nibName: "BookingViewController", bundle: .main)
+        bookingVC.pitch = pitch
+        navigationController?.pushViewController(bookingVC, animated: true)
+    }
+    
     @objc
     private func backDidTapped() {
         dismiss(animated: true, completion: nil)

@@ -16,4 +16,7 @@ enum EndPoint: String {
     case sendMail = "/sendmail"
     
     case listPitch = "/v1/pitch/list"
+    case billByPitch = "/v1/bill/listbypitch"
+    case billByRenter = "/v1/bill/listbyrenter"
+    case addBill = "/v1/bill/add"
 }

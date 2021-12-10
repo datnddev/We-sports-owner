@@ -290,8 +290,9 @@ extension SearchViewController: UICollectionViewDelegate {
         let pitchVC = PitchDetailViewController(
             nibName: "PitchDetailViewController",
             bundle: nil)
-        pitchVC.modalPresentationStyle = .fullScreen
         pitchVC.pitch = pitchs[indexPath.item]
-        present(pitchVC, animated: true, completion: nil)
+        let navVC = UINavigationController(rootViewController: pitchVC)
+        navVC.modalPresentationStyle = .fullScreen
+        present(navVC, animated: true, completion: nil)
     }
 }
