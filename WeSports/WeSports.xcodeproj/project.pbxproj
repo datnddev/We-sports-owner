@@ -90,6 +90,7 @@
 		AB8A21652746CCEE00AD1F22 /* BothLabelsCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8A21642746CCEE00AD1F22 /* BothLabelsCollectionReusableView.swift */; };
 		AB8B3583275F34CF00B7AF70 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B3581275F34CF00B7AF70 /* BookingViewController.swift */; };
 		AB8B3584275F34CF00B7AF70 /* BookingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB8B3582275F34CF00B7AF70 /* BookingViewController.xib */; };
+		AB94216C27662ADD00053AAF /* SearchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB94216B27662ADD00053AAF /* SearchDelegate.swift */; };
 		ABD7BC19275517F00010F857 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD7BC18275517F00010F857 /* LocationService.swift */; };
 		ABD7BC1D2755CCBC0010F857 /* PitchTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD7BC1B2755CCBC0010F857 /* PitchTypeTableViewCell.swift */; };
 		ABD7BC1E2755CCBC0010F857 /* PitchTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABD7BC1C2755CCBC0010F857 /* PitchTypeTableViewCell.xib */; };
@@ -283,6 +284,7 @@
 		AB8A21642746CCEE00AD1F22 /* BothLabelsCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BothLabelsCollectionReusableView.swift; sourceTree = "<group>"; };
 		AB8B3581275F34CF00B7AF70 /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
 		AB8B3582275F34CF00B7AF70 /* BookingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookingViewController.xib; sourceTree = "<group>"; };
+		AB94216B27662ADD00053AAF /* SearchDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDelegate.swift; sourceTree = "<group>"; };
 		ABD7BC18275517F00010F857 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		ABD7BC1B2755CCBC0010F857 /* PitchTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchTypeTableViewCell.swift; sourceTree = "<group>"; };
 		ABD7BC1C2755CCBC0010F857 /* PitchTypeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PitchTypeTableViewCell.xib; sourceTree = "<group>"; };
@@ -542,6 +544,7 @@
 				AB24E295274398A5004148B2 /* ChangeRootViewProtocol.swift */,
 				AB24E2B5274412A9004148B2 /* ValidatorConvertible.swift */,
 				AB5FE63227621B5D000EBAAD /* CalendarViewControllerProtocol.swift */,
+				AB94216B27662ADD00053AAF /* SearchDelegate.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -1109,6 +1112,7 @@
 				AB24E27127434965004148B2 /* APIManager.swift in Sources */,
 				AB24E25627434684004148B2 /* SceneDelegate.swift in Sources */,
 				ABFECD5E275DC09100FB97F8 /* TabbedView.swift in Sources */,
+				AB94216C27662ADD00053AAF /* SearchDelegate.swift in Sources */,
 				AB6E4480275CADF100ED3EE7 /* PitchDetailViewController.swift in Sources */,
 				ABFECD5D275DC09100FB97F8 /* PagedView.swift in Sources */,
 				AB24E26F27434946004148B2 /* Constants.swift in Sources */,

@@ -14,6 +14,7 @@ final class HomeViewController: UIViewController {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var locationView: UIView!
     @IBOutlet weak var homeTableView: UITableView!
+    var searchDelegate: SearchDelegate?
     private var promos = Promo.dummyData()
     private var pitchs = [PitchDetail]() {
         didSet {
@@ -31,6 +32,14 @@ final class HomeViewController: UIViewController {
     private func setupView() {
         topUIView.makeRadius(radius: 40,
                              mask: [.layerMinXMaxYCorner, .layerMaxXMaxYCorner])
+        if let tabBarController = UIApplication.keyWindow?.rootViewController as? UITabBarController {
+            if let searchNav = tabBarController.viewControllers![1]
+                    as? UINavigationController {
+                if let searchVc = searchNav.viewControllers.first as? SearchViewController {
+                    searchDelegate = searchVc
+                }
+            }
+        }
     }
     
     private func loadData() {
@@ -106,9 +115,25 @@ extension HomeViewController: UITableViewDataSource {
             cell.configure(section: .promo)
         } else if indexPath.section == 1 {
             cell.configure(section: .ticket)
+            cell.bookAction = { filter in
+                if let tabBarController = UIApplication.keyWindow?.rootViewController
+                    as? UITabBarController {
+                    self.searchDelegate?.searchPitch(filter: filter)
+                    tabBarController.selectedIndex = 1
+                }
+            }
         } else {
             cell.configure(section: .nearByField)
             cell.nearByPitch = pitchs
+            cell.pitchDidTap = { pitchDetail in
+                let pitchDetailVC = PitchDetailViewController(
+                    nibName: "PitchDetailViewController",
+                    bundle: .main)
+                pitchDetailVC.pitch = pitchDetail
+                let navVC = UINavigationController(rootViewController: pitchDetailVC)
+                navVC.modalPresentationStyle = .fullScreen
+                self.present(navVC, animated: true, completion: nil)
+            }
         }
         return cell
     }

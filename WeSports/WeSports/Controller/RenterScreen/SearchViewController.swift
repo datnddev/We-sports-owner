@@ -47,6 +47,7 @@ final class SearchViewController: UIViewController {
                                         height: UIScreen.main.bounds.height))
         return sideMenu
     }()
+    
     private var pitchs = [PitchDetail]() {
         didSet {
             pitchCollectionView.reloadData()
@@ -62,7 +63,6 @@ final class SearchViewController: UIViewController {
         loadData()
     }
 
-    
     private func setupView() {
         containerView.makeRadius(radius: 35, mask: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
         filterContainerView.layer.shadowColor = UIColor.black.cgColor
@@ -169,28 +169,11 @@ final class SearchViewController: UIViewController {
             self.getPitchs(filter: filter) { pitchsResponse in
                 var pitchsFilter = pitchsResponse
                 //filter by price
-                if let minPrice = filter.minPrice,
-                   let maxPrice = filter.maxPrice {
-                    pitchsFilter = pitchsFilter.filter{
-                        $0.minPrice >= minPrice &&
-                            $0.minPrice <= maxPrice &&
-                            $0.maxPrice >= minPrice &&
-                            $0.maxPrice <= maxPrice
-                    }
-                }
+                pitchsFilter = self.priceFilter(filter: filter, for: pitchsFilter)
                 //filter by distance
-                if filter.distance < 99 {
-                    pitchsFilter = pitchsFilter.filter({ pitchDetail in
-                        guard let location = pitchDetail.pitchAddress.location,
-                              let latitude = CLLocationDegrees(location.latitude),
-                              let longtitude = CLLocationDegrees(location.longitude) else { return false}
-                        let cllocation = CLLocation(latitude: latitude, longitude: longtitude)
-                        guard let distancePitch = LocationManager.shared.distanceTo(toLocation: cllocation) else {
-                            return false
-                        }
-                        return distancePitch/1000 <= filter.distance
-                    })
-                }
+                pitchsFilter = self.distanceFilter(filter: filter, for: pitchsFilter)
+                //filter by type
+                pitchsFilter = self.typeFilter(filter: filter, for: pitchsFilter)
                 
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
@@ -198,6 +181,7 @@ final class SearchViewController: UIViewController {
                 }
             }
         }
+        
         //animated
         UIView.animate(withDuration: 0.5,
                        delay: 0,
@@ -207,6 +191,52 @@ final class SearchViewController: UIViewController {
             
             self.sideMenu.frame.origin.x = self.view.frame.size.width - self.sideMenu.bounds.width
         }
+    }
+    
+    private func typeFilter(filter: Filter, for pitchsResponse: [PitchDetail]) -> [PitchDetail] {
+        var pitchsFilter = pitchsResponse
+        if let typeId = filter.pitchType?.id {
+            if typeId != "4" {
+                pitchsFilter = pitchsFilter.filter {
+                    print($0.pitchType.id)
+                    print("type: \(typeId)")
+                    return $0.pitchType.id == typeId
+                }
+            }
+        }
+        return pitchsFilter
+    }
+    
+    private func priceFilter(filter: Filter, for pitchsResponse: [PitchDetail]) -> [PitchDetail] {
+        var pitchsFilter = pitchsResponse
+        //filter by price
+        if let minPrice = filter.minPrice,
+           let maxPrice = filter.maxPrice {
+            pitchsFilter = pitchsFilter.filter{
+                $0.minPrice >= minPrice &&
+                    $0.minPrice <= maxPrice &&
+                    $0.maxPrice >= minPrice &&
+                    $0.maxPrice <= maxPrice
+            }
+        }
+        return pitchsFilter
+    }
+    
+    private func distanceFilter(filter: Filter, for pitchsResponse: [PitchDetail]) -> [PitchDetail] {
+        var pitchsFilter = pitchsResponse
+        if filter.distance < 99 {
+            pitchsFilter = pitchsFilter.filter({ pitchDetail in
+                guard let location = pitchDetail.pitchAddress.location,
+                      let latitude = CLLocationDegrees(location.latitude),
+                      let longtitude = CLLocationDegrees(location.longitude) else { return false}
+                let cllocation = CLLocation(latitude: latitude, longitude: longtitude)
+                guard let distancePitch = LocationManager.shared.distanceTo(toLocation: cllocation) else {
+                    return false
+                }
+                return distancePitch/1000 <= filter.distance
+            })
+        }
+        return pitchsFilter
     }
         
     private func loadData() {
@@ -261,6 +291,18 @@ final class SearchViewController: UIViewController {
         let section = NSCollectionLayoutSection(group: group)
         let layout = UICollectionViewCompositionalLayout(section: section)
         return layout
+    }
+}
+
+extension SearchViewController: SearchDelegate {
+    func searchPitch(filter: Filter) {
+        getPitchs(filter: filter) { pitchResponse in
+            let pitchFilter = self.typeFilter(filter: filter, for: pitchResponse)
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                self.pitchs = pitchFilter
+            }
+        }
     }
 }
 

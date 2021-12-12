@@ -21,6 +21,9 @@ class HomeTableViewCell: UITableViewCell, ReusableView {
             homeCollectionView.reloadData()
         }
     }
+    var bookAction: ((Filter) -> Void)?
+    var pitchDidTap: ((PitchDetail) -> Void)?
+    
     func configure(section: HomeSection) {
         homeSection = section
         setupCollectionView()
@@ -135,6 +138,11 @@ class HomeTableViewCell: UITableViewCell, ReusableView {
         section.orthogonalScrollingBehavior = .paging
         return section
     }
+    
+    @objc
+    private func pitchDidTapped() {
+        
+    }
 }
 
 extension HomeTableViewCell: UICollectionViewDataSource {
@@ -170,7 +178,8 @@ extension HomeTableViewCell: UICollectionViewDataSource {
         case .ticket:
             let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: TicketCollectionViewCell.identifier,
-                for: indexPath)
+                for: indexPath) as! TicketCollectionViewCell
+            cell.bookingAction = bookAction
             return cell
         case .nearByField:
             if nearByPitch.isEmpty {
@@ -218,5 +227,9 @@ extension HomeTableViewCell: UICollectionViewDataSource {
 }
 
 extension HomeTableViewCell: UICollectionViewDelegate {
-
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if homeSection == .nearByField {
+            pitchDidTap?(nearByPitch[indexPath.item])
+        }
+    }
 }
