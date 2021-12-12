@@ -27,8 +27,8 @@ final class TicketCollectionViewCell: UICollectionViewCell, ReusableView {
             sportLabel.text = currentPitchType.type
         }
     }
-    @IBAction func bookingDidTapped(_ sender: Any) {
-    }
+    
+    var bookingAction: ((Filter) -> Void)?
     
     func configure() {
         dayAndMonthLabel.text = "\(currentDate.formatDate(format: "dd")) tháng \(currentDate.formatDate(format: "MM"))"
@@ -109,6 +109,19 @@ final class TicketCollectionViewCell: UICollectionViewCell, ReusableView {
         topRightUIView.addGestureRecognizer(UITapGestureRecognizer(
                                                 target: self,
                                                 action: #selector(pitchTypeDidTapped)))
+    }
+    
+    //MARK: Action
+    @IBAction func bookingDidTapped(_ sender: Any) {
+        LocationManager.currentCity { [weak self] city in
+            guard let self = self else { return }
+            let filter = Filter(addressCity: city,
+                                addressDistrict: nil,
+                                pitchType: self.currentPitchType,
+                                minPrice: nil, maxPrice: nil,
+                                distance: 20)
+            self.bookingAction?(filter)
+        }
     }
     
     @objc

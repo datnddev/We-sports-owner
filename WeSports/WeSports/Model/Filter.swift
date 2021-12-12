@@ -10,6 +10,7 @@ import Foundation
 struct Filter: Codable {
     var addressCity: City?
     var addressDistrict: District?
+    var pitchType: PitchType?
     var minPrice: Double?
     var maxPrice: Double?
     var distance: Double = 1
