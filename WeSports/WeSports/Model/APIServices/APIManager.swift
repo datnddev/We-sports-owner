@@ -100,8 +100,7 @@ final class APIManager {
         }.resume()
     }
     
-    func getRequest<E: Encodable>(url: String,
-                                   params: E,
+    func getRequest(url: String,
                                    completion: @escaping (Result<Data, APIError>) -> Void) {
         guard let url = URL(string: url) else {
             completion(.failure(.urlError))
@@ -111,13 +110,6 @@ final class APIManager {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        //encode data
-        do {
-            request.httpBody = try JSONEncoder().encode(params)
-        } catch {
-            completion(.failure(.encodeError))
-        }
         
         //send request
         URLSession.shared.dataTask(with: request) { data, response, _ in

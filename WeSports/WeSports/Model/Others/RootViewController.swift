@@ -20,7 +20,7 @@ enum RootViewController {
     }
     
     static func mainRootView() -> UIViewController {
-        let homeVC = HomeViewController()
+        let homeVC = HomeViewController(nibName: "HomeViewController", bundle: .main)
         homeVC.tabBarItem = UITabBarItem(
             title: "Home",
             image: UIImage(systemName: "house.fill"),
@@ -28,7 +28,7 @@ enum RootViewController {
         let homeNav = UINavigationController(rootViewController: homeVC)
         homeNav.navigationBar.isHidden = true
         
-        let searchVC = SearchViewController()
+        let searchVC = SearchViewController(nibName: "SearchViewController", bundle: .main)
         searchVC.tabBarItem = UITabBarItem(
             title: "Search",
             image: UIImage(systemName: "magnifyingglass.circle.fill"),
@@ -36,9 +36,16 @@ enum RootViewController {
         let searchNav = UINavigationController(rootViewController: searchVC)
         searchNav.navigationBar.isHidden = true
         
+        let listChatVC = ListChatViewController(nibName: "ListChatViewController", bundle: .main)
+        listChatVC.tabBarItem = UITabBarItem(
+            title: "Chat",
+            image: UIImage(systemName: "message.fill"),
+            selectedImage: nil)
+        let listChatNav = UINavigationController(rootViewController: listChatVC)                        
+        
         let tabBarVc = UITabBarController()
         UITabBar.appearance().tintColor = .hex_211A2C
-        tabBarVc.viewControllers = [homeNav, searchNav]
+        tabBarVc.viewControllers = [homeNav, searchNav, listChatNav]
         return tabBarVc
     }
 }

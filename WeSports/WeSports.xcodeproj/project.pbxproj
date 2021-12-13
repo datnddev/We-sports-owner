@@ -52,6 +52,9 @@
 		AB5FE6302761E612000EBAAD /* TimePriceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5FE62E2761E612000EBAAD /* TimePriceCollectionViewCell.swift */; };
 		AB5FE6312761E612000EBAAD /* TimePriceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB5FE62F2761E612000EBAAD /* TimePriceCollectionViewCell.xib */; };
 		AB5FE63327621B5D000EBAAD /* CalendarViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5FE63227621B5D000EBAAD /* CalendarViewControllerProtocol.swift */; };
+		AB6879222766C3DF00257075 /* ListRenterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6879212766C3DF00257075 /* ListRenterResponse.swift */; };
+		AB6879242766C67800257075 /* ListOwnerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6879232766C67800257075 /* ListOwnerResponse.swift */; };
+		AB6879262766C9D400257075 /* ListChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6879252766C9D400257075 /* ListChat.swift */; };
 		AB695EC427535B1E0002F691 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB695EC227535B1E0002F691 /* HomeTableViewCell.swift */; };
 		AB695EC527535B1E0002F691 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB695EC327535B1E0002F691 /* HomeTableViewCell.xib */; };
 		AB6AD452275B05460052F373 /* SideMenuUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6AD451275B05460052F373 /* SideMenuUIView.swift */; };
@@ -91,6 +94,12 @@
 		AB8B3583275F34CF00B7AF70 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B3581275F34CF00B7AF70 /* BookingViewController.swift */; };
 		AB8B3584275F34CF00B7AF70 /* BookingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB8B3582275F34CF00B7AF70 /* BookingViewController.xib */; };
 		AB94216C27662ADD00053AAF /* SearchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB94216B27662ADD00053AAF /* SearchDelegate.swift */; };
+		AB94216F27667A7300053AAF /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB94216D27667A7300053AAF /* ChatViewController.swift */; };
+		AB94217027667A7300053AAF /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB94216E27667A7300053AAF /* ChatViewController.xib */; };
+		AB942173276682C200053AAF /* ListChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB942171276682C200053AAF /* ListChatViewController.swift */; };
+		AB942174276682C200053AAF /* ListChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB942172276682C200053AAF /* ListChatViewController.xib */; };
+		AB94217727668D3F00053AAF /* ListChatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB94217527668D3F00053AAF /* ListChatCollectionViewCell.swift */; };
+		AB94217827668D3F00053AAF /* ListChatCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB94217627668D3F00053AAF /* ListChatCollectionViewCell.xib */; };
 		ABD7BC19275517F00010F857 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD7BC18275517F00010F857 /* LocationService.swift */; };
 		ABD7BC1D2755CCBC0010F857 /* PitchTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD7BC1B2755CCBC0010F857 /* PitchTypeTableViewCell.swift */; };
 		ABD7BC1E2755CCBC0010F857 /* PitchTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABD7BC1C2755CCBC0010F857 /* PitchTypeTableViewCell.xib */; };
@@ -246,6 +255,9 @@
 		AB5FE62E2761E612000EBAAD /* TimePriceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePriceCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB5FE62F2761E612000EBAAD /* TimePriceCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimePriceCollectionViewCell.xib; sourceTree = "<group>"; };
 		AB5FE63227621B5D000EBAAD /* CalendarViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewControllerProtocol.swift; sourceTree = "<group>"; };
+		AB6879212766C3DF00257075 /* ListRenterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRenterResponse.swift; sourceTree = "<group>"; };
+		AB6879232766C67800257075 /* ListOwnerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOwnerResponse.swift; sourceTree = "<group>"; };
+		AB6879252766C9D400257075 /* ListChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListChat.swift; sourceTree = "<group>"; };
 		AB695EC227535B1E0002F691 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		AB695EC327535B1E0002F691 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		AB6AD451275B05460052F373 /* SideMenuUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuUIView.swift; sourceTree = "<group>"; };
@@ -285,6 +297,12 @@
 		AB8B3581275F34CF00B7AF70 /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
 		AB8B3582275F34CF00B7AF70 /* BookingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookingViewController.xib; sourceTree = "<group>"; };
 		AB94216B27662ADD00053AAF /* SearchDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDelegate.swift; sourceTree = "<group>"; };
+		AB94216D27667A7300053AAF /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		AB94216E27667A7300053AAF /* ChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
+		AB942171276682C200053AAF /* ListChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListChatViewController.swift; sourceTree = "<group>"; };
+		AB942172276682C200053AAF /* ListChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListChatViewController.xib; sourceTree = "<group>"; };
+		AB94217527668D3F00053AAF /* ListChatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListChatCollectionViewCell.swift; sourceTree = "<group>"; };
+		AB94217627668D3F00053AAF /* ListChatCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListChatCollectionViewCell.xib; sourceTree = "<group>"; };
 		ABD7BC18275517F00010F857 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		ABD7BC1B2755CCBC0010F857 /* PitchTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchTypeTableViewCell.swift; sourceTree = "<group>"; };
 		ABD7BC1C2755CCBC0010F857 /* PitchTypeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PitchTypeTableViewCell.xib; sourceTree = "<group>"; };
@@ -477,6 +495,7 @@
 				AB6E447C275C68EE00ED3EE7 /* ListPitchParams.swift */,
 				ABDBB28B2760B5B300393960 /* Bill.swift */,
 				AB5FE6282761B819000EBAAD /* TimePerRent.swift */,
+				AB6879252766C9D400257075 /* ListChat.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -590,6 +609,8 @@
 				AB5FE62F2761E612000EBAAD /* TimePriceCollectionViewCell.xib */,
 				AB83BE272763420C004F7F77 /* TimePerRentCollectionViewCell.swift */,
 				AB83BE282763420C004F7F77 /* TimePerRentCollectionViewCell.xib */,
+				AB94217527668D3F00053AAF /* ListChatCollectionViewCell.swift */,
+				AB94217627668D3F00053AAF /* ListChatCollectionViewCell.xib */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -658,6 +679,10 @@
 				AB6E447F275CADF100ED3EE7 /* PitchDetailViewController.xib */,
 				AB8B3581275F34CF00B7AF70 /* BookingViewController.swift */,
 				AB8B3582275F34CF00B7AF70 /* BookingViewController.xib */,
+				AB94216D27667A7300053AAF /* ChatViewController.swift */,
+				AB94216E27667A7300053AAF /* ChatViewController.xib */,
+				AB942171276682C200053AAF /* ListChatViewController.swift */,
+				AB942172276682C200053AAF /* ListChatViewController.xib */,
 			);
 			path = RenterScreen;
 			sourceTree = "<group>";
@@ -688,6 +713,8 @@
 				ABF192A02750B9D20038B429 /* ListPitchResponse.swift */,
 				ABDBB28D2760B6B900393960 /* BillResponse.swift */,
 				ABDBB28F2760B82600393960 /* ListBillReponse.swift */,
+				AB6879212766C3DF00257075 /* ListRenterResponse.swift */,
+				AB6879232766C67800257075 /* ListOwnerResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -958,6 +985,7 @@
 				AB6AD454275B05500052F373 /* SideMenuUIView.xib in Resources */,
 				ABD7BC862755F63D0010F857 /* 86.json in Resources */,
 				ABDBB2952761959900393960 /* CalendarViewController.xib in Resources */,
+				AB94217827668D3F00053AAF /* ListChatCollectionViewCell.xib in Resources */,
 				ABD7BC8D2755F63D0010F857 /* 93.json in Resources */,
 				ABD7BC932755F63D0010F857 /* 35.json in Resources */,
 				AB83BE3127639C76004F7F77 /* success.json in Resources */,
@@ -976,6 +1004,7 @@
 				ABD7BC7C2755F63D0010F857 /* 94.json in Resources */,
 				ABD7BC652755F63D0010F857 /* 92.json in Resources */,
 				ABD7BC722755F63D0010F857 /* 15.json in Resources */,
+				AB94217027667A7300053AAF /* ChatViewController.xib in Resources */,
 				AB6E4487275CB77F00ED3EE7 /* ImagePitchDetailView.xib in Resources */,
 				ABD7BC782755F63D0010F857 /* 26.json in Resources */,
 				ABF192AA2750D4200038B429 /* PitchTableViewCell.xib in Resources */,
@@ -1000,6 +1029,7 @@
 				ABD7BC8F2755F63D0010F857 /* 87.json in Resources */,
 				ABD7BC9B2755F63D0010F857 /* 08.json in Resources */,
 				AB83BE2A2763420C004F7F77 /* TimePerRentCollectionViewCell.xib in Resources */,
+				AB942174276682C200053AAF /* ListChatViewController.xib in Resources */,
 				ABF1929F27508A670038B429 /* SearchViewController.xib in Resources */,
 				ABD7BC982755F63D0010F857 /* 83.json in Resources */,
 				ABD7BC962755F63D0010F857 /* 40.json in Resources */,
@@ -1055,10 +1085,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB94217727668D3F00053AAF /* ListChatCollectionViewCell.swift in Sources */,
 				AB24E2742743499F004148B2 /* EndPoint.swift in Sources */,
 				AB6E448A275CB89900ED3EE7 /* ImageCollectionViewCell.swift in Sources */,
 				ABF9946227507D15005BFC95 /* District.swift in Sources */,
 				AB24E28C274365F2004148B2 /* UIView+.swift in Sources */,
+				AB6879262766C9D400257075 /* ListChat.swift in Sources */,
 				AB24E29827439956004148B2 /* RootViewController.swift in Sources */,
 				AB24E296274398A5004148B2 /* ChangeRootViewProtocol.swift in Sources */,
 				ABE1333A2745780B00EC9377 /* Date+.swift in Sources */,
@@ -1098,14 +1130,17 @@
 				AB748E3227473F1500DC2446 /* PageFooterCollectionReusableView.swift in Sources */,
 				ABDBB2982761A2F200393960 /* ConfirmViewController.swift in Sources */,
 				AB075F082744FBFA0063440F /* InforTextFields.swift in Sources */,
+				AB6879242766C67800257075 /* ListOwnerResponse.swift in Sources */,
 				ABEF1A7827596E87001094BA /* BlankDataCollectionViewCell.swift in Sources */,
 				AB748E482747AD5200DC2446 /* FieldCollectionViewCell.swift in Sources */,
 				ABDBB2902760B82600393960 /* ListBillReponse.swift in Sources */,
+				AB6879222766C3DF00257075 /* ListRenterResponse.swift in Sources */,
 				AB6E447B275C659300ED3EE7 /* Filter.swift in Sources */,
 				AB24E2B6274412A9004148B2 /* ValidatorConvertible.swift in Sources */,
 				AB83BE292763420C004F7F77 /* TimePerRentCollectionViewCell.swift in Sources */,
 				AB24E25427434684004148B2 /* AppDelegate.swift in Sources */,
 				AB24E28A2743640A004148B2 /* SplashModel+.swift in Sources */,
+				AB942173276682C200053AAF /* ListChatViewController.swift in Sources */,
 				AB15DB09275692B500AF59CA /* DataCacheManager.swift in Sources */,
 				AB6AD452275B05460052F373 /* SideMenuUIView.swift in Sources */,
 				AB8A21452746384E00AD1F22 /* Cache.swift in Sources */,
@@ -1137,6 +1172,7 @@
 				AB8A21402745EFA700AD1F22 /* HomeViewController.swift in Sources */,
 				AB24E2B42744128B004148B2 /* Validator.swift in Sources */,
 				AB8A21492746395C00AD1F22 /* Cache+Entry.swift in Sources */,
+				AB94216F27667A7300053AAF /* ChatViewController.swift in Sources */,
 				ABF1929E27508A670038B429 /* SearchViewController.swift in Sources */,
 				AB6E447D275C68EE00ED3EE7 /* ListPitchParams.swift in Sources */,
 				ABF9946327507D15005BFC95 /* PitchType.swift in Sources */,
